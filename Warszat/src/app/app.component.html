@@ -19,11 +19,11 @@
     <h1 class="logo">Warsztat samochodowy</h1>
     <nav>
       <ul class="menu">
-        <li><a href="#">Strona głowna</a></li>
-        <li><a href="#">Cennik</a></li>
-        <li><a href="#">O naszej firmie</a></li>
-        <li><a href="#">Kontakt</a></li>
-        <li><a href="#">Galeria</a></li>
+        <li><a [routerLink]="['/home']">Strona głowna</a></li>
+        <li><a [routerLink]="['/gallery']">Galeria</a></li>
+        <li><a [routerLink]="['/price-list']">Cennik</a></li>
+        <li><a [routerLink]="['/about']">O naszej firmie</a></li>
+        <li><a [routerLink]="['/contact']">Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -32,20 +32,14 @@
     <article>
       <section>
         <div class="zdjecie">
-          <img src="img/tło1.jpeg"> 
+          <img src="img/tło.PNG"> 
         </div>
       </section>
 
       <section id="nowy">
 
         <div class="opis">
-          <header>
-            <h1>Warsztat samochodowy</h1>
-
-            <p>To nowoczesny warsztat samochodowy wyposażony w specjalistyczne narzędzia i maszyny diagnostyczne najnowszej generacji. To również profesjonalny zespół fachowców z bogatym doświadczeniem w branży motoryzacyjnej.
-
-              Wszystko to pozwala nam na kompleksową obsługę od najmniejszych aut osobowych poprzez auta terenowe po największe auta dostawcze wszystkich marek i modeli</p>
-          </header>
+          <router-outlet></router-outlet>
         </div>
       </section>
     </article>
@@ -61,3 +55,4 @@
 
 </body>
 </html>
+

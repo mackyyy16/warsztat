@@ -1,6 +1,5 @@
 body
   {
-    margin: 0;
     background-color: #6e6969;
     color: #ffffff;
     font-family: 'Open Sans' , sans-serif;
@@ -14,8 +13,6 @@ h1.logo
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 nav
 {
