@@ -1,0 +1,25 @@
+<h1>Dodaj ogloszenie</h1>
+<div class="testClass">
+    <label>Marka: </label>
+    <input type="text" [(ngModel)]="newCar.marka">
+    <br>
+    <label>Model: </label>
+    <input type="text" [(ngModel)]="newCar.model">
+    <br>
+    <label>Nr rejestracyjny: </label>
+    <input type="text" [(ngModel)]="newCar.nrRejestracyjny">
+    <br>
+    <label>Nr vin: </label>
+    <input type="text" [(ngModel)]="newCar.nrVin">
+    <br>
+    <label>Przebieg: </label>
+    <input type="text" [(ngModel)]="newCar.przebieg">
+    <br>
+    <label>Opis usterki: </label>
+    <input type="text" [(ngModel)]="opis">
+    <br>
+</div>
+<br>
+<div>
+    <button (click)="add()">Dodaj</button>
+</div>
