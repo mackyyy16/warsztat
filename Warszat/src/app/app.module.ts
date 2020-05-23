@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { AddApplicationComponent } from './add-application/add-application.component';
+import { ReviewApplicationComponent } from './review-application/review-application.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddApplicationComponent
+    AddApplicationComponent,
+    ReviewApplicationComponent
   ],
   imports: [
     BrowserModule,

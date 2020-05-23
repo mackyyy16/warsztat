@@ -7,6 +7,7 @@ import { ICar } from '../shared/models/car';
 })
 export class AddApplicationComponent {
   public newCar: ICar = {
+    id: 1,
     marka: "Audi",
     model: "A4",
     nrRejestracyjny: "KS XXXXX",

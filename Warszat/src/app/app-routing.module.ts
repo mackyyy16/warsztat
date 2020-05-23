@@ -7,6 +7,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { AddApplicationComponent } from './add-application/add-application.component';
+import { ReviewApplicationComponent } from './review-application/review-application.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path:'gallery', component:GalleryComponent },
   { path:'price-list', component:PriceListComponent }, 
   { path:'add-application', component:AddApplicationComponent },
+  { path:'review-application', component:ReviewApplicationComponent }, 
   { path:'about', component:AboutComponent },
   { path:'contact', component:ContactComponent },
   { path:'login', component:LoginComponent }

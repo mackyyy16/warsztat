@@ -1,0 +1,50 @@
+<h1>Przegladaj ogloszenie</h1>
+<div>
+    <label>Wprowadz nr zgloszenia:</label>
+    <input type="number" [(ngModel)]="nrZgloszenia">
+    
+    <button (click)="show()">Pokaz</button>
+</div>
+<br>
+<div *ngIf="showInfo">    
+    <div>
+        <label>Marka: </label>
+        <input type="text" [(ngModel)]="newCar.marka">
+        <br>
+        <label>Model: </label>
+        <input type="text" [(ngModel)]="newCar.model">
+        <br>
+        <label>Nr rejestracyjny: </label>
+        <input type="text" [(ngModel)]="newCar.nrRejestracyjny">
+        <br>
+        <label>Nr vin: </label>
+        <input type="text" [(ngModel)]="newCar.nrVin">
+        <br>
+        <label>Przebieg: </label>
+        <input type="text" [(ngModel)]="newCar.przebieg">
+        <br>
+        <label>Opis usterki: </label>
+        <input type="text" [(ngModel)]="opis">
+        <br>
+    </div>
+    <br>
+    <h4>Informacje</h4>
+    <div>
+        <label>Data Rozpoczecia: </label>
+        <input type="text" [(ngModel)]="repairInfo.dataRozpoczecia">
+        <br>
+        <label>Data Zakonczenia: </label>
+        <input type="text" [(ngModel)]="repairInfo.dataZakoczenia">
+        <br>
+        <label>Status: </label>
+        <input type="text" [(ngModel)]="repairInfo.status">
+        <br>
+        <label>Opis: </label>
+        <input type="text" [(ngModel)]="repairInfo.opis">
+        <br>
+        <label>Koszt: </label>
+        <input type="text" [(ngModel)]="repairInfo.koszt">
+        <br>
+    </div>
+
+</div>
