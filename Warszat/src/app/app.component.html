@@ -10,53 +10,42 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
 	
-	<link rel="stylesheet" href="app.component.css">
+	<link rel="stylesheet" href="app.component.css" type="text/css" >
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
-	</head>
+</head>
 
 <body>
-  <header>
-    <h1 class="logo">Warsztat samochodowy</h1>
-    <nav>
-      <ul class="menu">
-        <li><a [routerLink]="['/home']">Strona głowna</a></li>
+  
+	<div class="wrapper">
+		<div class="header">
+		 <div class="logo">
+      <h1 class="logo">Warsztat samochodowy</h1>
+		</div>
+		</div>
+		<div class="nav">
+			<ol>
+        <li><a [routerLink]="['/home']">Strona główna</a></li>
         <li><a [routerLink]="['/gallery']">Galeria</a></li>
         <li><a [routerLink]="['/price-list']">Cennik</a></li>
-        <li><a [routerLink]="['/add-application']">Dodaj zgloszenie</a></li>
-        <li><a [routerLink]="['/review-application']">Przegladaj zgloszenie</a></li>
+				<li><a [routerLink]="['/customer-area-application']">Strefa klienta</a>
+					<ul>
+						<li><a [routerLink]="['/add-application']">Dodaj zgłoszenie</a></li>
+						<li><a [routerLink]="['/review-application']">Przegladaj zgłoszenie</a></li>
+          </ul>
         <li><a [routerLink]="['/about']">O naszej firmie</a></li>
         <li><a [routerLink]="['/contact']">Kontakt</a></li>
         <li><a [routerLink]="['/login']">Logowanie</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <article>
-      <!-- <section>
-        <div class="photo_background">
-          <img src="img/tło.PNG"> 
-        </div>
-      </section> -->
-      <br>
-
-      <section id="nowy">
-
-        <div class="opis">
-          <router-outlet></router-outlet>
-        </div>
-      </section>
-    </article>
-  </main>
-
-  <footer>
-
-
-
-
-  </footer>
-
-
+			</ol>
+		
+		</div>
+		
+		<div class="content">
+		 <router-outlet></router-outlet>
+		</div>
+			
+		<div class="footer">Maciej Poreba&Jakub Siedlarz</div>
+  </div>
+  
 </body>
 </html>
 

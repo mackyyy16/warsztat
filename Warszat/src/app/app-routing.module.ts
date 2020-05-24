@@ -8,12 +8,14 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { AddApplicationComponent } from './add-application/add-application.component';
 import { ReviewApplicationComponent } from './review-application/review-application.component';
+import { CustomerAreaComponent } from './customer-area/customer-area.component';
 
 
 const routes: Routes = [
   { path:'home', component:HomeComponent },
   { path:'gallery', component:GalleryComponent },
-  { path:'price-list', component:PriceListComponent }, 
+  { path:'price-list', component:PriceListComponent },
+  { path:'customer-area', component:CustomerAreaComponent},
   { path:'add-application', component:AddApplicationComponent },
   { path:'review-application', component:ReviewApplicationComponent }, 
   { path:'about', component:AboutComponent },
