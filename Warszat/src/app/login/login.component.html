@@ -1,3 +1,12 @@
-Login:
+<div>
+    <label>Login: </label>
+    <input type="text" [(ngModel)]="nick">
+    <br>
+    <label>Hasło: </label>
+    <input type="text" [(ngModel)]="password">
+    <br>
+</div>
 <br>
-Hasło:
+<div>
+    <button (click)="login()">Zaloguj</button>
+</div>

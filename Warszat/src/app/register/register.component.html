@@ -1,0 +1,31 @@
+<h1>Bezpłatna rejestracja</h1>
+<div>
+    <label>Imie: </label>
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <label>Nazwisko: </label>
+    <input type="text" [(ngModel)]="surname">
+    <br>
+    <label>Płeć: </label>
+    <input type="text" [(ngModel)]="sex">
+    <br>
+    <label>Login: </label>
+    <input type="text" [(ngModel)]="login">
+    <br>
+    <label>Hasło: </label>
+    <input type="text" [(ngModel)]="password">
+    <br>
+    <label>E-mail: </label>
+    <input type="text" [(ngModel)]="email">
+    <br>
+    <label>Data urodzenia: </label>
+    <input type="text" [(ngModel)]="dateofbirth">
+    <br>
+    <label>Nr telefonu: </label>
+    <input type="text" [(ngModel)]="phonenumber">
+    <br>
+</div>
+<br>
+<div>
+    <button (click)="register()">Zarejestruj się</button>
+</div>

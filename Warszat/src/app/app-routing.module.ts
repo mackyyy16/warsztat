@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AddApplicationComponent } from './add-application/add-application.component';
 import { ReviewApplicationComponent } from './review-application/review-application.component';
 import { CustomerAreaComponent } from './customer-area/customer-area.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -20,8 +21,8 @@ const routes: Routes = [
   { path:'review-application', component:ReviewApplicationComponent }, 
   { path:'about', component:AboutComponent },
   { path:'contact', component:ContactComponent },
-  { path:'login', component:LoginComponent }
-
+  { path:'login', component:LoginComponent },
+  { path:'register', component:RegisterComponent },
 ];
 
 @NgModule({
