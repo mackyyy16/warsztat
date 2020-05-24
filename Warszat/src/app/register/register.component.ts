@@ -8,7 +8,6 @@ export class RegisterComponent {
 
   public name: string = "Jan";
   public surname: string = "Kowalski";
-  public sex: string = "m";
   public login: string = "1234";
   public password: string = "1234";
   public email: string = "jankowalski@gmail.com";

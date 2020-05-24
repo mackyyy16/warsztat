@@ -9,9 +9,27 @@ body
 
 .login
 {
-	width: 100%;
+	width: 250px;
+	float: right;
+	background-color: #c34f4f;
+	padding: 8px 0;
+	border-top: 1px solid #751b1b;
+	border-bottom: 1px solid #751b1b;
+	text-align: center;
 	list-style-type: none;
-	text-align: right;
+}
+
+li > a
+{
+	color: #ffffff;
+	text-decoration: none;
+	display: inline-block;
+}
+
+li > a:hover
+{
+	background-color: #cf6969;
+	color: #451717;
 }
 
 .wrapper
@@ -27,9 +45,9 @@ body
 
 .logo
 {
-	width: 100%;
-	font-size: 48px;
-	margin-left: auto;
+  width: 100%;
+  font-size: 48px;
+  margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
