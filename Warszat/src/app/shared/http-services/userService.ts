@@ -5,13 +5,13 @@ import { IUser } from '../models/user';
 import { tap, catchError } from 'rxjs/operators';
 
 @Injectable({
-   providedIn: 'root' 
+   providedIn: 'root'
 })
 export class UserService{
     constructor(private http: HttpClient){
 
     }
-    private url='http://localhost:5001/api/users';
+    private url = 'http://localhost:5001/api/users';
 
     getUser(): Observable<IUser[]>{
         return this.http.get<IUser[]>(this.url)
@@ -22,7 +22,7 @@ export class UserService{
     }
 
     private error(err: HttpErrorResponse){
-        return throwError("error");
+        return throwError('error');
     }
-    
+
 }
