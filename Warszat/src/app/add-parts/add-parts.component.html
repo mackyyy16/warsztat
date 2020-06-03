@@ -1,0 +1,17 @@
+<h1>Dodaj część</h1>
+
+<div>
+    <label>Nazwa: </label>
+    <input type="text" [(ngModel)]="newPart.name">
+    <br>
+    <label>Producent: </label>
+    <input type="text" [(ngModel)]="newPart.producent">
+    <br>
+    <label>Cena: </label>
+    <input type="text" [(ngModel)]="newPart.price">
+    <br>
+</div>
+<br>
+<div>
+    <button (click)="add()">Dodaj</button>
+</div>

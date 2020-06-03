@@ -10,6 +10,9 @@ import { ReviewApplicationComponent } from './review-application/review-applicat
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddPartsComponent } from './add-parts/add-parts.component';
+import { ReviewPartsComponent } from './review-parts/review-parts.component';
+import { ReviewApplicationWorkerComponent } from './review-application-worker/review-application-worker.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReviewApplicationComponent,
     LoginComponent,
     RegisterComponent,
+    AddPartsComponent,
+    ReviewPartsComponent,
+    ReviewApplicationWorkerComponent
   ],
   imports: [
     BrowserModule,

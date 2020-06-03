@@ -26,6 +26,7 @@ export class ReviewApplicationComponent {
   }
 
   showInfo: boolean = false;
+  isWorker: boolean = true;
   nrZgloszenia: number;
 
   public opis: string = "Do zrobienia";

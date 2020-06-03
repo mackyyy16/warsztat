@@ -1,0 +1,72 @@
+<h1>Przeglądaj zgłoszenia napraw</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id naprawy</th>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Nr Rejestracyjny</th>
+                <th>Nr VIN</th>
+                <th>Przebieg</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let app of applicationsArray">
+                <td>{{app.id}}</td>
+                <td>{{app.marka}}</td>
+                <td>{{app.model}}</td>
+                <td>{{app.nrRejestracyjny}}</td>
+                <td>{{app.nrVin}}</td>
+                <td>{{app.przebieg}}</td>
+                <td>
+                    <button (click)="showInfo(app)">
+                        Pokaż
+                    </button>
+                </td>
+                <td>
+                    <button (click)="removeApp(app)">
+                        Usuń
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br><br>
+    <table *ngIf="show">
+        <thead>
+            <tr>
+                <th>Id naprawy???</th>
+                <th>Data Rozpoczęcia</th>
+                <th>Data Zakończenia</th>
+                <th>Status</th>
+                <th>Opis</th>
+                <th>Koszt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{rapairInfo.id}}</td>
+                <td>{{rapairInfo.dataRozpoczecia}}</td>
+                <td>                    
+                    <input type="text" [(ngModel)]="rapairInfo.dataZakoczenia">
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="rapairInfo.status">
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="rapairInfo.opis">
+                </td>
+                <td>                    
+                    <input type="text" [(ngModel)]="rapairInfo.koszt">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <br><br>
+    <button (click)="save()">
+        Zapisz
+    </button> -->
+</div>

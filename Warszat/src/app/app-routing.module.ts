@@ -10,6 +10,9 @@ import { AddApplicationComponent } from './add-application/add-application.compo
 import { ReviewApplicationComponent } from './review-application/review-application.component';
 import { CustomerAreaComponent } from './customer-area/customer-area.component';
 import { RegisterComponent } from './register/register.component';
+import { AddPartsComponent } from './add-parts/add-parts.component';
+import { ReviewPartsComponent } from './review-parts/review-parts.component';
+import { ReviewApplicationWorkerComponent } from './review-application-worker/review-application-worker.component';
 
 
 const routes: Routes = [
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path:'customer-area', component:CustomerAreaComponent},
   { path:'add-application', component:AddApplicationComponent },
   { path:'review-application', component:ReviewApplicationComponent }, 
+  { path:'add-parts', component:AddPartsComponent },
+  { path:'review-parts', component:ReviewPartsComponent },
+  { path:'review-application-worker', component:ReviewApplicationWorkerComponent },
   { path:'about', component:AboutComponent },
   { path:'contact', component:ContactComponent },
   { path:'login', component:LoginComponent },
