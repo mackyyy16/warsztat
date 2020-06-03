@@ -12,7 +12,7 @@ body
 	width: 250px;
 	float: right;
 	background-color: #c34f4f;
-	padding: 8px 0;
+	padding: 10px 0;
 	border-top: 1px solid #751b1b;
 	border-bottom: 1px solid #751b1b;
 	text-align: center;
@@ -55,7 +55,7 @@ li > a:hover
 .nav
 { 
 	width: 100%;
-	padding: 10px 0;
+	padding: 20px 0;
 	background-color: #c34f4f;
 	text-align: center;
 	border-top: 1px solid #751b1b;
@@ -99,7 +99,7 @@ ol a
 ol > li
 {
 	float: left;
-	width: 150px;
+	width: 180px;
 	height: 40px;
 	border-right: 1px dashed #751b1b;
 }

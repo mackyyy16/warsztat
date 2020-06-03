@@ -13,22 +13,26 @@ import { RegisterComponent } from './register/register.component';
 import { AddPartsComponent } from './add-parts/add-parts.component';
 import { ReviewPartsComponent } from './review-parts/review-parts.component';
 import { ReviewApplicationWorkerComponent } from './review-application-worker/review-application-worker.component';
+import { BrowseEmployeesComponent } from './browse-employees/browse-employees.component';
+import { BrowseReportComponent } from './browse-report/browse-report.component';
 
 
 const routes: Routes = [
-  { path:'home', component:HomeComponent },
-  { path:'gallery', component:GalleryComponent },
-  { path:'price-list', component:PriceListComponent },
-  { path:'customer-area', component:CustomerAreaComponent},
-  { path:'add-application', component:AddApplicationComponent },
-  { path:'review-application', component:ReviewApplicationComponent }, 
-  { path:'add-parts', component:AddPartsComponent },
-  { path:'review-parts', component:ReviewPartsComponent },
-  { path:'review-application-worker', component:ReviewApplicationWorkerComponent },
-  { path:'about', component:AboutComponent },
-  { path:'contact', component:ContactComponent },
-  { path:'login', component:LoginComponent },
-  { path:'register', component:RegisterComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'price-list', component: PriceListComponent },
+  { path: 'customer-area', component: CustomerAreaComponent},
+  { path: 'add-application', component: AddApplicationComponent },
+  { path: 'review-application', component: ReviewApplicationComponent },
+  { path: 'add-parts', component: AddPartsComponent },
+  { path: 'review-parts', component: ReviewPartsComponent },
+  { path: 'review-application-worker', component: ReviewApplicationWorkerComponent },
+  { path: 'browse-employees', component: BrowseEmployeesComponent},
+  { path: 'browse-report', component: BrowseReportComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
