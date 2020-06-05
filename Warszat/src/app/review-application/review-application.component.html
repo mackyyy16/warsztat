@@ -10,22 +10,22 @@
     <div *ngIf="isWorker">
         <div>
             <label>Marka: </label>
-            <input type="text" [(ngModel)]="newCar.marka">
+            <input type="text" [(ngModel)]="newCar.mark">
             <br>
             <label>Model: </label>
             <input type="text" [(ngModel)]="newCar.model">
             <br>
             <label>Nr rejestracyjny: </label>
-            <input type="text" [(ngModel)]="newCar.nrRejestracyjny">
+            <input type="text" [(ngModel)]="newCar.regnumber">
             <br>
             <label>Nr vin: </label>
-            <input type="text" [(ngModel)]="newCar.nrVin">
+            <input type="text" [(ngModel)]="newCar.nrvin">
             <br>
             <label>Przebieg: </label>
-            <input type="text" [(ngModel)]="newCar.przebieg">
+            <input type="text" [(ngModel)]="newCar.course">
             <br>
             <label>Opis usterki: </label>
-            <input type="text" [(ngModel)]="opis">
+            <input type="text" [(ngModel)]="newCar.descfault">
             <br>
         </div>
         <br>
@@ -51,22 +51,22 @@
     <div *ngIf="!isWorker">
         <div >
             <label>Marka: </label>
-            <label>{{newCar.marka}}</label>
+            <label>{{newCar.mark}}</label>
             <br>
             <label>Model: </label>
             <label>{{newCar.model}}</label>
             <br>
             <label>Nr rejestracyjny: </label>
-            <label>{{newCar.nrRejestracyjny}}</label>
+            <label>{{newCar.regnumber}}</label>
             <br>
             <label>Nr vin: </label>
-            <label>{{newCar.nrVin}}</label>
+            <label>{{newCar.nrvin}}</label>
             <br>
             <label>Przebieg: </label>
-            <label>{{newCar.przebieg}}</label>
+            <label>{{newCar.course}}</label>
             <br>
             <label>Opis usterki: </label>
-            <label>{{opis}}</label>
+            <label>{{newCar.descfault}}</label>
             <br>
         </div>
         <br>

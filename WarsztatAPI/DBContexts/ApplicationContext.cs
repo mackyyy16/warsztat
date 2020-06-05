@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WarsztatApi.Entities;
+using WarsztatAPI.Entities;
 
 namespace WarsztatAPI.DBContexts
 {
@@ -15,5 +16,6 @@ namespace WarsztatAPI.DBContexts
 
         }
         public DbSet<User> user { get; set; }
+        public DbSet<Application> application { get; set; }
     }
 }

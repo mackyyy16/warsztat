@@ -8,11 +8,12 @@ import { ICar } from '../shared/models/car';
 export class AddApplicationComponent {
   public newCar: ICar = {
     id: 1,
-    marka: "Audi",
+    mark: "Audi",
     model: "A4",
-    nrRejestracyjny: "KS XXXXX",
-    nrVin: 12334556,
-    przebieg: 250000
+    regnumber: "KS XXXXX",
+    nrvin: 12334556,
+    course: 250000,
+    descfault: "szyba"
   }
 
   public opis: string = "Do zrobienia";

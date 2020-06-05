@@ -21,6 +21,14 @@ export class UserService{
             );
     }
 
+    addUser(user: IUser): Observable<IUser>{
+        return this.http.post<IUser>(this.url, user)
+            .pipe(
+                tap(data => console.log('allusers; '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
     private error(err: HttpErrorResponse){
         return throwError('error');
     }

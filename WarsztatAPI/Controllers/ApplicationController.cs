@@ -5,16 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using WarsztatApi.Entities;
 using WarsztatAPI.DBContexts;
+using WarsztatAPI.Entities;
 
 namespace WarsztatAPI.Controllers
 {
     [ApiController]
-    [Route("api/users")]
-    public class UserController : ControllerBase
+    [Route("api/applications")]
+    public class ApplicationController : ControllerBase
     {
         private readonly ApplicationContext context;
 
-        public UserController(ApplicationContext context)
+        public ApplicationController(ApplicationContext context)
         {
             this.context = context;
         }
@@ -22,14 +23,14 @@ namespace WarsztatAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var users = context.user.ToList<User>();
+            var users = context.application.ToList<Application>();
             return Ok(users);
         }
 
         [HttpPost]
-        public void AddUserToDatabase(User user)
+        public void AddUserToDatabase(Application app)
         {
-            context.user.Add(user);
+            context.application.Add(app);
             context.SaveChanges();
         }
     }

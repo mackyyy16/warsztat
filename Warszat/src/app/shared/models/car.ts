@@ -1,8 +1,9 @@
 export interface ICar{
     id: number;
-    marka: string;
+    mark: string;
     model: string;
-    nrRejestracyjny: string;
-    nrVin: number;
-    przebieg: number;
+    regnumber: string;
+    nrvin: number;
+    course: number;
+    descfault: string;
 }

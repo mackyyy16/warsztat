@@ -9,5 +9,5 @@ export interface IUser {
         dateofbirth: string;
         phonenumber: number;
         idrepair: number;
-
+        role: string;
 }

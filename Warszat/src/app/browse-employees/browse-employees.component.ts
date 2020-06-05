@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./browse-employees.component.css']
 })
 export class BrowseEmployeesComponent {
+
 }
