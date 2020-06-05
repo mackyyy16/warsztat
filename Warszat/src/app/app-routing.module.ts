@@ -8,7 +8,6 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { AddApplicationComponent } from './add-application/add-application.component';
 import { ReviewApplicationComponent } from './review-application/review-application.component';
-import { CustomerAreaComponent } from './customer-area/customer-area.component';
 import { RegisterComponent } from './register/register.component';
 import { AddPartsComponent } from './add-parts/add-parts.component';
 import { ReviewPartsComponent } from './review-parts/review-parts.component';
@@ -21,7 +20,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'price-list', component: PriceListComponent },
-  { path: 'customer-area', component: CustomerAreaComponent},
   { path: 'add-application', component: AddApplicationComponent },
   { path: 'review-application', component: ReviewApplicationComponent },
   { path: 'add-parts', component: AddPartsComponent },
