@@ -26,6 +26,14 @@ namespace WarsztatAPI.Controllers
             return Ok(repairs);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetRepair(int id)
+        {
+            var repair = context.repair.Where(q => q.id_repair == id).FirstOrDefault();
+            return Ok(repair);
+        }
+
         [HttpPost]
         public void AddUserToDatabase(Repair repair)
         {

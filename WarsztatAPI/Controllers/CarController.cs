@@ -10,7 +10,7 @@ using WarsztatAPI.Entities;
 namespace WarsztatAPI.Controllers
 {
     [ApiController]
-    [Route("api/car")]
+    [Route("api/cars")]
     public class CarController : ControllerBase
     {
         private readonly ApplicationContext context;
@@ -45,9 +45,22 @@ namespace WarsztatAPI.Controllers
         }
 
         [HttpPost]
-        public void AddUserToDatabase(Car app)
+        public void AddUserToDatabase(Car car)
         {
-            context.car.Add(app);
+            car.id_repair = car.id_car;
+
+            var emptyRepair = new Repair()
+            {
+                id_repair = car.id_car,
+                start_date = DateTime.Now.ToString("dd-MM-yyyy"),
+                status = "W oczekiwaniu",
+                description = "",
+                end_date = "",
+                price = 0
+            };
+
+            context.car.Add(car);
+            context.repair.Add(emptyRepair);
             context.SaveChanges();
         }
     }

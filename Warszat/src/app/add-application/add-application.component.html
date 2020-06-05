@@ -23,3 +23,7 @@
 <div>
     <button (click)="add()">Dodaj</button>
 </div>
+<br><br>
+<div *ngIf="showMessage">
+    <label>Nr twojego zgloszenia to: {{newCar.id_car}}</label>
+</div>

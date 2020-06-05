@@ -1,38 +1,51 @@
 import { Component } from '@angular/core';
 import { ICar } from '../shared/models/car';
 import { IRepair } from '../shared/models/repair';
+import { CarService } from '../shared/http-services/carService';
+import { RepairService } from '../shared/http-services/repairService';
 
 @Component({
    templateUrl: './review-application.component.html',
   styleUrls: ['./review-application.component.css']
 })
 export class ReviewApplicationComponent {
-  public newCar: ICar = {
-    id_car: 1,
-    mark: "Audi",
-    model: "A4",
-    regnumber: "KS XXXXX",
-    nrvin: 12334556,
-    course: 250000,
-    descfault: "drzwi"
-  }
-
-  public repairInfo: IRepair = {
-    id_repair: 123,
-    start_date: "12.12.2019",
-    end_date: "01.01.2020",
-    status: "Realizacji",
-    description: "Tralala",
-    price: 1500.20
-  }
 
   showInfo: boolean = false;
   isWorker: boolean = true;
   nrZgloszenia: number;
 
-  public opis: string = "Do zrobienia";
+  public newCar: ICar;
+  public cars: ICar[] = [];
+  public repairInfo: IRepair;
+
+  constructor(private carService: CarService,
+              private repairService: RepairService){
+
+  }
 
   show(){
+
+    this.carService.getCars().subscribe({
+      next:carsFromApi => this.cars=carsFromApi,
+      error:err => err=err
+    })
+
+    if(this.cars.length !== 0){
+      
+      let findedRepair = this.cars.filter(q => q.id_car === this.nrZgloszenia);
+
+      if(findedRepair.length !== 0){
+        debugger;
+
+        this.newCar = findedRepair[0];
+
+        this.repairService.getRepair(findedRepair[0].id_repair).subscribe({
+          next:carsFromApi => this.repairInfo=carsFromApi,
+          error:err => err=err
+        })
+      }
+    }    
+
     if(this.nrZgloszenia === this.repairInfo.id_repair){
       this.showInfo = true;
     }

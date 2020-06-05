@@ -6,4 +6,5 @@ export interface ICar{
     nrvin: number;
     course: number;
     descfault: string;
+    id_repair: number;
 }
