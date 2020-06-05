@@ -24,7 +24,24 @@ namespace WarsztatAPI.Controllers
         public IActionResult Get()
         {
             var cars = context.car.ToList<Car>();
+
+            foreach (var car in cars)
+            {
+                var carRepair = context.repair.Where(q => q.id_repair == car.id_repair).FirstOrDefault();
+
+            }
             return Ok(cars);
+        }
+
+        [HttpGet]
+        [Route("{carId}")]
+        public IActionResult GetCarRepair(int carId)
+        {
+            var car = context.car.Where(q => q.id_car == carId).FirstOrDefault();
+
+            var repair = context.repair.Where(q => q.id_repair == car.id_repair).FirstOrDefault();
+
+            return Ok(repair);
         }
 
         [HttpPost]

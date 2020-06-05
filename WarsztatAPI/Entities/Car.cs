@@ -16,5 +16,6 @@ namespace WarsztatAPI.Entities
         public int nrvin { get; set; }
         public int course { get; set; }
         public string descfault { get; set; }
+        public int id_repair { get; set; }
     }
 }
