@@ -6,50 +6,9 @@
     <button (click)="show()">Pokaz</button>
 </div>
 <br>
-<div *ngIf="showInfo">  
-    <div *ngIf="isWorker">
+<div *ngIf="showInfo">    
+    <div>
         <div>
-            <label>Marka: </label>
-            <input type="text" [(ngModel)]="newCar.mark">
-            <br>
-            <label>Model: </label>
-            <input type="text" [(ngModel)]="newCar.model">
-            <br>
-            <label>Nr rejestracyjny: </label>
-            <input type="text" [(ngModel)]="newCar.regnumber">
-            <br>
-            <label>Nr vin: </label>
-            <input type="text" [(ngModel)]="newCar.nrvin">
-            <br>
-            <label>Przebieg: </label>
-            <input type="text" [(ngModel)]="newCar.course">
-            <br>
-            <label>Opis usterki: </label>
-            <input type="text" [(ngModel)]="newCar.descfault">
-            <br>
-        </div>
-        <br>
-        <h4>Informacje</h4>
-        <div>
-            <label>Data Rozpoczecia: </label>
-            <input type="text" [(ngModel)]="repairInfo.dataRozpoczecia">
-            <br>
-            <label>Data Zakonczenia: </label>
-            <input type="text" [(ngModel)]="repairInfo.dataZakoczenia">
-            <br>
-            <label>Status: </label>
-            <input type="text" [(ngModel)]="repairInfo.status">
-            <br>
-            <label>Opis: </label>
-            <input type="text" [(ngModel)]="repairInfo.opis">
-            <br>
-            <label>Koszt: </label>
-            <input type="text" [(ngModel)]="repairInfo.koszt">
-            <br>
-        </div>
-    </div>      
-    <div *ngIf="!isWorker">
-        <div >
             <label>Marka: </label>
             <label>{{newCar.mark}}</label>
             <br>
@@ -73,19 +32,19 @@
         <h4>Informacje</h4>
         <div>
             <label>Data Rozpoczecia: </label>
-            <label>{{repairInfo.dataRozpoczecia}}</label>
+            <label>{{repairInfo.start_date}}</label>
             <br>
             <label>Data Zakonczenia: </label>
-            <label>{{repairInfo.dataZakoczenia}}</label>
+            <label>{{repairInfo.end_date}}</label>
             <br>
             <label>Status: </label>
             <label>{{repairInfo.status}}</label>
             <br>
             <label>Opis: </label>
-            <label>{{repairInfo.opis}}</label>
+            <label>{{repairInfo.description}}</label>
             <br>
             <label>Koszt: </label>
-            <label>{{repairInfo.koszt}}</label>
+            <label>{{repairInfo.price}}</label>
             <br>
         </div>
     </div>    

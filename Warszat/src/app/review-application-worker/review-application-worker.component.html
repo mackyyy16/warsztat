@@ -48,19 +48,19 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{rapairInfo.id}}</td>
-                <td>{{rapairInfo.dataRozpoczecia}}</td>
+                <td>{{rapairInfo.id_repair}}</td>
+                <td>{{rapairInfo.start_date}}</td>
                 <td>                    
-                    <input type="text" [(ngModel)]="rapairInfo.dataZakoczenia">
+                    <input type="text" [(ngModel)]="rapairInfo.end_date">
                 </td>
                 <td>
                     <input type="text" [(ngModel)]="rapairInfo.status">
                 </td>
                 <td>
-                    <input type="text" [(ngModel)]="rapairInfo.opis">
+                    <input type="text" [(ngModel)]="rapairInfo.description">
                 </td>
                 <td>                    
-                    <input type="text" [(ngModel)]="rapairInfo.koszt">
+                    <input type="text" [(ngModel)]="rapairInfo.price">
                 </td>
             </tr>
         </tbody>

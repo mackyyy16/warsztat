@@ -8,7 +8,7 @@ import { IRepair } from '../shared/models/repair';
 })
 export class ReviewApplicationComponent {
   public newCar: ICar = {
-    id: 1,
+    id_car: 1,
     mark: "Audi",
     model: "A4",
     regnumber: "KS XXXXX",
@@ -18,12 +18,12 @@ export class ReviewApplicationComponent {
   }
 
   public repairInfo: IRepair = {
-    id: 123,
-    dataRozpoczecia: new Date(),
-    dataZakoczenia: new Date(),
+    id_repair: 123,
+    start_date: "12.12.2019",
+    end_date: "01.01.2020",
     status: "Realizacji",
-    opis: "Tralala",
-    koszt: 1500.20
+    description: "Tralala",
+    price: 1500.20
   }
 
   showInfo: boolean = false;
@@ -33,7 +33,7 @@ export class ReviewApplicationComponent {
   public opis: string = "Do zrobienia";
 
   show(){
-    if(this.nrZgloszenia === this.repairInfo.id){
+    if(this.nrZgloszenia === this.repairInfo.id_repair){
       this.showInfo = true;
     }
     else{

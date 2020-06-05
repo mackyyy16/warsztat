@@ -17,7 +17,7 @@ export class RegisterComponent {
     email: 'asd@ad.ok',
     dateofbirth: '123.23',
     phonenumber: 44,
-    idclient: 5,
+    id_user: 5,
     idrepair: 3,
     sex: 'm',
     role: 'worker'

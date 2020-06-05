@@ -1,8 +1,8 @@
 export interface IRepair{
-    id: number;
-    dataRozpoczecia: Date;
-    dataZakoczenia: Date;
+    id_repair: number;
+    start_date: string;
+    end_date: string;
     status: string;
-    opis: string;
-    koszt: number;
+    description: string;
+    price: number;
 }
