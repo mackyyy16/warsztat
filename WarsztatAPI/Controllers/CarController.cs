@@ -10,12 +10,12 @@ using WarsztatAPI.Entities;
 namespace WarsztatAPI.Controllers
 {
     [ApiController]
-    [Route("api/applications")]
-    public class ApplicationController : ControllerBase
+    [Route("api/car")]
+    public class CarController : ControllerBase
     {
         private readonly ApplicationContext context;
 
-        public ApplicationController(ApplicationContext context)
+        public CarController(ApplicationContext context)
         {
             this.context = context;
         }
@@ -23,14 +23,14 @@ namespace WarsztatAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var users = context.application.ToList<Application>();
-            return Ok(users);
+            var cars = context.car.ToList<Car>();
+            return Ok(cars);
         }
 
         [HttpPost]
-        public void AddUserToDatabase(Application app)
+        public void AddUserToDatabase(Car app)
         {
-            context.application.Add(app);
+            context.car.Add(app);
             context.SaveChanges();
         }
     }

@@ -40,3 +40,45 @@ C:\Users\porba\Desktop\PROJEKT WARSZTAT\GitHub\warsztat\WarsztatAPI\obj\Debug\ne
 C:\Users\porba\Desktop\PROJEKT WARSZTAT\GitHub\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\porba\Desktop\PROJEKT WARSZTAT\GitHub\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Npgsql.dll
 C:\Users\porba\Desktop\PROJEKT WARSZTAT\GitHub\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\WarsztatAPI.exe
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\WarsztatAPI.deps.json
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\WarsztatAPI.runtimeconfig.json
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\WarsztatAPI.runtimeconfig.dev.json
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\WarsztatAPI.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\WarsztatAPI.pdb
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Npgsql.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.csprojAssemblyReference.cache
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.AssemblyInfoInputs.cache
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.AssemblyInfo.cs
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.csproj.CoreCompileInputs.cache
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.RazorTargetAssemblyInfo.cache
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.csproj.CopyComplete
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\staticwebassets\WarsztatAPI.StaticWebAssets.Manifest.cache
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\staticwebassets\WarsztatAPI.StaticWebAssets.xml
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.dll
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.pdb
+C:\Users\poreb\Desktop\Warsztat\warsztat\WarsztatAPI\obj\Debug\netcoreapp3.1\WarsztatAPI.genruntimeconfig.cache

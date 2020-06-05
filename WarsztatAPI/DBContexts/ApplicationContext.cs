@@ -16,6 +16,6 @@ namespace WarsztatAPI.DBContexts
 
         }
         public DbSet<User> user { get; set; }
-        public DbSet<Application> application { get; set; }
+        public DbSet<Car> car { get; set; }
     }
 }

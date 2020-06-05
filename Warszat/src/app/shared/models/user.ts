@@ -1,5 +1,5 @@
 export interface IUser {
-        idclient: number;
+        id_user: number;
         name: string;
         surname: string;
         sex: string;

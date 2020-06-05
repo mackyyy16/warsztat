@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace WarsztatApi.Entities {
     public class User{
         [Key]
-        public int idclient { get; set;}
+        public int id_user { get; set;}
         public string name { get; set;}
         public string surname { get; set;}
         public string sex { get; set;}

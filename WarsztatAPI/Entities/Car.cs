@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WarsztatAPI.Entities
 {
-    public class Application
+    public class Car
     {
         [Key]
-        public int id { get; set; }
+        public int id_car { get; set; }
         public string mark { get; set; }
         public string model { get; set; }
         public string regnumber { get; set; }
