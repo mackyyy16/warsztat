@@ -9,18 +9,20 @@
                 <th>Nr Rejestracyjny</th>
                 <th>Nr VIN</th>
                 <th>Przebieg</th>
+                <th>Opis usterki</th>
                 <th></th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let app of applicationsArray">
-                <td>{{app.id}}</td>
-                <td>{{app.marka}}</td>
+            <tr *ngFor="let app of applications">
+                <td>{{app.id_car}}</td>
+                <td>{{app.mark}}</td>
                 <td>{{app.model}}</td>
-                <td>{{app.nrRejestracyjny}}</td>
-                <td>{{app.nrVin}}</td>
-                <td>{{app.przebieg}}</td>
+                <td>{{app.regnumber}}</td>
+                <td>{{app.nrvin}}</td>
+                <td>{{app.course}}</td>
+                <td>{{app.descfault}}</td>
                 <td>
                     <button (click)="showInfo(app)">
                         Pokaż
@@ -35,36 +37,61 @@
         </tbody>
     </table>
     <br><br><br>
-    <table *ngIf="show">
-        <thead>
-            <tr>
-                <th>Id naprawy</th>
-                <th>Data Rozpoczęcia</th>
-                <th>Data Zakończenia</th>
-                <th>Status</th>
-                <th>Opis</th>
-                <th>Koszt</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{rapairInfo.id_repair}}</td>
-                <td>{{rapairInfo.start_date}}</td>
-                <td>                    
-                    <input type="text" [(ngModel)]="rapairInfo.end_date">
-                </td>
-                <td>
-                    <input type="text" [(ngModel)]="rapairInfo.status">
-                </td>
-                <td>
-                    <input type="text" [(ngModel)]="rapairInfo.description">
-                </td>
-                <td>                    
-                    <input type="text" [(ngModel)]="rapairInfo.price">
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
+    <div *ngIf="show">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id naprawy</th>
+                    <th>Data Rozpoczęcia</th>
+                    <th>Data Zakończenia</th>
+                    <th>Status</th>
+                    <th>Opis</th>
+                    <th>Koszt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{rapairInfo.id_repair}}</td>
+                    <td>{{rapairInfo.start_date}}</td>
+                    <td>                    
+                        <input type="text" [(ngModel)]="rapairInfo.end_date">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="rapairInfo.status">
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="rapairInfo.description">
+                    </td>
+                    <td>                    
+                        <input type="text" [(ngModel)]="rapairInfo.price">
+                    </td>
+                </tr>
+            </tbody>        
+        </table>
+        <br><br>
+        <label>Użyte części podaczas naprawy: </label>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Producent</th>
+                    <th>Cena [zł]</th>
+                    <th>Ilość</th>
+                    <th>Suma</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let part of partsInfo">
+                    <td>{{part.part.name}}</td>
+                    <td>{{part.part.producer}}</td>
+                    <td>{{part.part.price}}</td>
+                    <td>{{part.amount}}</td>
+                    <td>{{part.amount * part.part.price}}</td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
     <!-- <br><br>
     <button (click)="save()">
         Zapisz

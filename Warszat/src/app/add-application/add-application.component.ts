@@ -23,31 +23,34 @@ export class AddApplicationComponent {
   public showMessage: boolean = false;
 
   constructor(private carService: CarService){
-
+    this.carService.getCars().subscribe({
+      next:carsFromApi => this.cars=carsFromApi,
+      error:err => err=err
+    })
   }
   add(){
     debugger;
 
+    //zrobić tak jak w add-part z id następnego ogłoszenia
+
     let val: ICar;
-    let err: any;
+    let err: any;   
+        
+    let sortedCars = [...this.cars.sort((a, b) => a.id_car - b.id_car).reverse()];
+    let newCarId = sortedCars[0].id_car + 1;
+
+    this.newCar.id_car = newCarId;
+
+    this.carService.addCar(this.newCar).subscribe({
+      next: usersFromApi => val = usersFromApi,
+      error:err => err=err
+    });
 
     this.carService.getCars().subscribe({
       next:carsFromApi => this.cars=carsFromApi,
       error:err => err=err
     })
-    
-    if(this.cars.length !== 0){      
-      let sortedCars = [...this.cars.sort(q => q.id_car).reverse()];
-      let newCarId = sortedCars[0].id_car + 1;
 
-      this.newCar.id_car = newCarId;
-
-      this.carService.addCar(this.newCar).subscribe({
-        next: usersFromApi => val = usersFromApi,
-        error:err => err=err
-      });
-
-      this.showMessage = true;
-    }
+    this.showMessage = true;
   }
 }

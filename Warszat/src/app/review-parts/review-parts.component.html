@@ -11,9 +11,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let part of newPartArray">
+            <tr *ngFor="let part of parts">
                 <td>{{part.name}}</td>
-                <td>{{part.producent}}</td>
+                <td>{{part.producer}}</td>
                 <td>{{part.price}}</td>
                 <td>
                     <button (click)="removePart(part)">

@@ -30,6 +30,14 @@ export class CarService{
             );
     }
 
+    removeCar(car: ICar): Observable<ICar>{
+        return this.http.delete<ICar>(this.url + '/' + car.id_car)
+            .pipe(
+                tap(data => console.log('allusers; '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
     private error(err: HttpErrorResponse){
         return throwError('error');
     }

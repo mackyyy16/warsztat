@@ -31,6 +31,14 @@ export class PartService{
             );
     }
 
+    removePart(part: IPart): Observable<IPart>{
+        return this.http.delete<IPart>(this.url+'/'+part.id_part)
+            .pipe(
+                tap(data => console.log('Parts: '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
     private error(err: HttpErrorResponse){
         return throwError('error');
     }

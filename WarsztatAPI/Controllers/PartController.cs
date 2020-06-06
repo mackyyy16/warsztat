@@ -35,10 +35,23 @@ namespace WarsztatAPI.Controllers
         }
 
         [HttpPost]
-        public void AddUserToDatabase(Part part)
+        public void AddPart(Part part)
         {
             context.part.Add(part);
             context.SaveChanges();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public void RemovePart(int id)
+        {
+            var part = context.part.Where(q => q.id_part == id).FirstOrDefault();
+
+            if(part != null)
+            {
+                context.part.Remove(part);
+                context.SaveChanges();
+            }
         }
     }
 }

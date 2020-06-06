@@ -63,5 +63,21 @@ namespace WarsztatAPI.Controllers
             context.repair.Add(emptyRepair);
             context.SaveChanges();
         }
+
+        [HttpDelete]
+        [Route("{idCar}")]
+        public void RemoveCarAndRepair(int idCar)
+        {
+            var car = context.car.Where(q => q.id_car == idCar).FirstOrDefault();
+
+            if(car != null)
+            {
+                var carRepair = context.repair.Where(q => q.id_repair == car.id_repair).FirstOrDefault();
+
+                context.car.Remove(car);
+                context.repair.Remove(carRepair);
+                context.SaveChanges();
+            }
+        }
     }
 }
