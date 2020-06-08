@@ -13,7 +13,7 @@ export class RepairService{
     constructor(private http: HttpClient){
 
     }
-    private url = 'http://localhost:5001/api/cars';
+    private url = 'http://localhost:5001/api/repair';
 
     getRepairs(): Observable<IRepair[]>{
         return this.http.get<IRepair[]>(this.url)

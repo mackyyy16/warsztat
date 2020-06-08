@@ -40,7 +40,7 @@ export class ReviewApplicationComponent {
 
       this.newCar = findedRepair[0];
 
-      this.repairService.getRepair(findedRepair[0].id_repair).subscribe({
+      this.carService.getCarRepair(findedRepair[0].id_repair).subscribe({
         next:carsFromApi => this.repairInfo=carsFromApi,
         error:err => err=err
       });

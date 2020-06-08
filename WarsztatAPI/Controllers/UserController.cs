@@ -32,5 +32,18 @@ namespace WarsztatAPI.Controllers
             context.user.Add(user);
             context.SaveChanges();
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public void DeleteUser(int id)
+        {
+            var user = context.user.Where(q => q.id_user == id).FirstOrDefault();
+
+            if(user != null)
+            {
+                context.user.Remove(user);
+                context.SaveChanges();
+            }
+        }
     }
 }

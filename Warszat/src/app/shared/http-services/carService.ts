@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { IUser } from '../models/user';
 import { tap, catchError } from 'rxjs/operators';
 import { ICar } from '../models/car';
+import { IRepair } from '../models/repair';
 
 @Injectable({
    providedIn: 'root'
@@ -26,6 +27,14 @@ export class CarService{
         return this.http.post<ICar>(this.url, car)
             .pipe(
                 tap(data => console.log('allusers; '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
+    getCarRepair(id_repair: number): Observable<IRepair>{
+        return this.http.get<IRepair>(this.url + '/' + id_repair)
+            .pipe(
+                tap(data => console.log('CarRepair: ' + JSON.stringify(data))),
                 catchError(this.error)
             );
     }

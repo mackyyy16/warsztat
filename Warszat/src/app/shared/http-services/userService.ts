@@ -29,6 +29,14 @@ export class UserService{
             );
     }
 
+    removeUser(user: IUser): Observable<IUser>{
+        return this.http.delete<IUser>(this.url + '/' + user.id_user)
+            .pipe(
+                tap(data => console.log('Users:' + JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
     private error(err: HttpErrorResponse){
         return throwError('error');
     }

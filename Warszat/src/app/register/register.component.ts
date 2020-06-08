@@ -18,7 +18,7 @@ export class RegisterComponent {
     dateofbirth: '123.23',
     phonenumber: 44,
     id_user: 5,
-    idrepair: 3,
+    idrepair: 0,
     sex: 'm',
     role: 'worker'
   };

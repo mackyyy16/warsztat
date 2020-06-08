@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddPartsComponent } from './add-parts/add-parts.component';
 import { ReviewPartsComponent } from './review-parts/review-parts.component';
 import { ReviewApplicationWorkerComponent } from './review-application-worker/review-application-worker.component';
+import { BrowseEmployeesComponent } from './browse-employees/browse-employees.component';
+import { BrowseReportComponent } from './browse-report/browse-report.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ReviewApplicationWorkerComponent } from './review-application-worker/re
     RegisterComponent,
     AddPartsComponent,
     ReviewPartsComponent,
-    ReviewApplicationWorkerComponent
+    ReviewApplicationWorkerComponent,
+    BrowseEmployeesComponent,
+    BrowseReportComponent
   ],
   imports: [
     BrowserModule,
