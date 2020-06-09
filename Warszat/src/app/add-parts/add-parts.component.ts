@@ -28,11 +28,12 @@ export class AddPartsComponent {
   add(){
     debugger;
     let parts;
-
+  
     let sortedParts = [...this.parts.sort((a, b) => a.id_part - b.id_part).reverse()];
     let newPartId = sortedParts[0].id_part + 1;
 
-    this.newPart.id_part = newPartId;
+    //this.newPart.id_part = newPartId;
+    //dodać logigę do add-application!!!!!!
 
     if(this.previousPartId === 0){
       this.previousPartId = newPartId;

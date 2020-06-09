@@ -64,36 +64,49 @@
                         <input type="text" [(ngModel)]="rapairInfo.description">
                     </td>
                     <td>                    
-                        <input type="text" [(ngModel)]="rapairInfo.price">
+                        <input type="number" [(ngModel)]="rapairInfo.price">
                     </td>
                 </tr>
             </tbody>        
         </table>
         <br><br>
-        <label>Użyte części podaczas naprawy: </label>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nazwa</th>
-                    <th>Producent</th>
-                    <th>Cena [zł]</th>
-                    <th>Ilość</th>
-                    <th>Suma</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let part of partsInfo">
-                    <td>{{part.part.name}}</td>
-                    <td>{{part.part.producer}}</td>
-                    <td>{{part.part.price}}</td>
-                    <td>{{part.amount}}</td>
-                    <td>{{part.amount * part.part.price}}</td>
-                </tr>
-            </tbody>
-        </table>        
+
+        <div *ngIf="showParts">
+            <label>Użyte części podaczas naprawy: </label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Producent</th>
+                        <th>Cena [zł]</th>
+                        <th>Ilość</th>
+                        <th>Suma</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let part of partsPerRepairInfo">
+                        <td>{{part.part.name}}</td>
+                        <td>{{part.part.producer}}</td>
+                        <td>{{part.part.price}}</td>
+                        <td>{{part.amount}}</td>
+                        <td>{{part.amount * part.part.price}}</td>
+                    </tr>
+                </tbody>
+            </table>  
+            <br><br>
+        </div>
+            
+        <label>Wybierz część użytą podczas naprawy: </label>
+        <select [(ngModel)]="selectedValue">
+            <option *ngFor="let item of partsListToCombo">{{item}}</option>
+        </select>
+        <br>
+        <label>Wybierz ilość części użytych podczas naprawy: </label>
+        <input type="number" [(ngModel)]="enteredQuantity">
+        <br><br>             
     </div>
-    <!-- <br><br>
+    <br><br>
     <button (click)="save()">
         Zapisz
-    </button> -->
+    </button>
 </div>

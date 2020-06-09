@@ -31,10 +31,18 @@ export class RepairService{
             );
     }
 
-    addRepair(car: IRepair): Observable<IRepair>{
-        return this.http.post<IRepair>(this.url, car)
+    addRepair(repair: IRepair): Observable<IRepair>{
+        return this.http.post<IRepair>(this.url, repair)
             .pipe(
                 tap(data => console.log('Repairs; '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
+    updateRepair(repair: IRepair): Observable<IRepair>{
+        return this.http.put<IRepair>(this.url, repair)
+            .pipe(
+                tap(data => console.log('Update repairs' + JSON.stringify(data))),
                 catchError(this.error)
             );
     }

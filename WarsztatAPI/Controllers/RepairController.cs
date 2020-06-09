@@ -40,5 +40,12 @@ namespace WarsztatAPI.Controllers
             context.repair.Add(repair);
             context.SaveChanges();
         }
+
+        [HttpPut]
+        public void UpdateRepair(Repair repair)
+        {
+            context.repair.Update(repair);
+            context.SaveChanges();
+        }
     }
 }
