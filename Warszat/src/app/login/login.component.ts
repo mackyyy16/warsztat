@@ -14,24 +14,25 @@ export class LoginComponent {
   public users: IUser[]=[];
   public showmessage: boolean=false;
   public errormessage: string="";
+  public message: string = "";
 
 
   login()
   {
     // sprawdzanie czy użytkownik jest w bazie
     debugger;
-    // tslint:disable-next-line: prefer-for-of
     for (let index = 0; index < this.users.length; index++) {
       let user = this.users[index];
 
       if (user.login === this.nick && user.password === this.password){
-      this.showmessage = true
+        this.message = "Pomyślnie zalogowano jako " + this.nick;
+      }else{
+        this.message = "Nie ma takiego użytkownika";    
+      }
     }
-
-    }
+    this.showmessage = true
   }
 
-  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit():void{
     this.userService.getUser().subscribe({
       next:usersFromApi => this.users=usersFromApi,

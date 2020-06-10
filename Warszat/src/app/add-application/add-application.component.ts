@@ -21,6 +21,7 @@ export class AddApplicationComponent {
   public opis: string = "Do zrobienia";
   public cars: ICar[]=[];
   public showMessage: boolean = false;
+  public previousCarId = 0;
 
   constructor(private carService: CarService){
     this.carService.getCars().subscribe({
@@ -30,16 +31,20 @@ export class AddApplicationComponent {
   }
   add(){
     debugger;
-
-    //zrobić tak jak w add-part z id następnego ogłoszenia
-
+    
     let val: ICar;
     let err: any;   
         
     let sortedCars = [...this.cars.sort((a, b) => a.id_car - b.id_car).reverse()];
     let newCarId = sortedCars[0].id_car + 1;
 
-    this.newCar.id_car = newCarId;
+    if(this.previousCarId === 0){
+      this.previousCarId = newCarId;
+      this.newCar.id_car = newCarId;
+    }else{
+      this.previousCarId = this.previousCarId + 1
+      this.newCar.id_car = this.previousCarId;
+    }
 
     this.carService.addCar(this.newCar).subscribe({
       next: usersFromApi => val = usersFromApi,

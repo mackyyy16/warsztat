@@ -7,24 +7,30 @@ import { IUser } from '../shared/models/user';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  public isMen: boolean = false;
+  public isMen: string = "";
+  public isWomen: boolean = false;
+  public users: IUser[] = [];
+  public previousPartId = 0;
 
   public user: IUser = {
-    name: 'Janek',
-    surname: 'Poreba',
-    login: 'JP',
-    password: 'asd',
-    email: 'asd@ad.ok',
-    dateofbirth: '123.23',
-    phonenumber: 44,
-    id_user: 5,
+    name: '',
+    surname: '',
+    login: '',
+    password: '',
+    email: '',
+    dateofbirth: '',
+    phonenumber: null,
+    id_user: 0,
     idrepair: 0,
-    sex: 'm',
-    role: 'worker'
+    sex: '',
+    role: ''
   };
 
   constructor(private userService: UserService){
-
+      this.userService.getUser().subscribe({
+        next: usersFromApi => this.users = usersFromApi,
+        error: err => err = err
+      });
   }
 
   register()
@@ -33,17 +39,26 @@ export class RegisterComponent {
     let val;
     let err;
 
+    let sortedUsers = [...this.users.sort((a, b) => a.id_user - b.id_user).reverse()];
+    let newUserId = sortedUsers[0].id_user + 1;
+
+    if(this.previousPartId === 0){
+      this.previousPartId = newUserId;
+      this.user.id_user = newUserId;
+    }else{
+      this.previousPartId = this.previousPartId + 1
+      this.user.id_user = this.previousPartId;
+    }
+
+    if(this.isMen === "true"){
+      this.user.sex = "men";
+    }else{
+      this.user.sex = "women";
+    }
+
     this.userService.addUser(this.user).subscribe({
       next: usersFromApi => val = usersFromApi,
       error:err => err=err
     });
-  }
-
-  men(){
-    this.isMen = true;
-  }
-
-  women(){
-    this.isMen = false;
   }
 }

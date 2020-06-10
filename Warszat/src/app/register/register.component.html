@@ -7,8 +7,8 @@
     <input type="text" [(ngModel)]="user.surname">
     <br>
     <label>Płeć: </label>
-    <label><input type="checkbox"> Mężczyzna</label>
-    <label><input type="checkbox"> Kobieta</label>
+    <label><input type="radio" value="true" name="isMen" [(ngModel)]="isMen"> Mężczyzna</label>
+    <label><input type="radio" value="false" name="isMen" [(ngModel)]="isMen"> Kobieta</label>
     <br>
     <label>Login: </label>
     <input type="text" [(ngModel)]="user.login">
