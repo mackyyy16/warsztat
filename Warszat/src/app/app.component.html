@@ -36,14 +36,14 @@
 				<li><a [routerLink]="['/review-application']">Przegladaj zgłoszenie</a></li>
 			</ul>
 		</li>
-		<li><a>Strefa pracownika</a>
+		<li *ngIf="(menuBarService.visibleWorkerComponent | async)"><a>Strefa pracownika</a>
 			<ul>
 				<li><a [routerLink]="['/add-parts']">Dodaj część</a></li>
 				<li><a [routerLink]="['/review-parts']">Przegladaj części</a></li>
 				<li><a [routerLink]="['/review-application-worker']">Przegladaj zgłoszenia napraw</a></li>
 			</ul>
 		</li>
-		<li><a>Strefa przedsiębiorcy</a>
+		<li *ngIf="(menuBarService.visibleAdminComponent | async)"><a>Strefa przedsiębiorcy</a>
 			<ul>
 				<li><a [routerLink]="['/browse-employees']">Przeglądaj pracowników</a></li>
 				<li><a [routerLink]="['/browse-report']">Przeglądaj raporty</a></li>
