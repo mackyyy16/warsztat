@@ -19,6 +19,18 @@ body
 	list-style-type: none;
 }
 
+.userInfo
+{
+	width: 120px;
+	float: right;
+	background-color: transparent;
+	padding: 10px 0;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	text-align: center;
+	list-style-type: none;
+}
+
 li > a
 {
 	color: #ffffff;

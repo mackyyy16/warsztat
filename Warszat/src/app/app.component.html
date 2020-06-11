@@ -21,12 +21,14 @@
 		   <li><a [routerLink]="['/register']">Zarejestruj się</a></li>
 		</div>
 		<div *ngIf="(menuBarService.isLogged | async)">
-			<label>Witaj {{menuBarService.loggedUser.name}}</label><br>
 			<li><a [routerLink]="['/manage-account']">Zarządzaj kontem</a></li>
 			<button (click)="logOff()">
 				Wyloguj
 			</button>
 		</div>
+   </div>
+   <div class="userInfo" *ngIf="(menuBarService.isLogged | async)">		
+	   <label>Witaj {{menuBarService.loggedUser.name}}</label>
    </div>
 	<div class="wrapper">
 		<div class="header">
