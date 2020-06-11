@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../shared/http-services/userService';
 import { IUser } from '../shared/models/user';
 import { MenuBarService } from '../shared/MenuBarService';
+import { Router } from '@angular/router';
 
 @Component({
    templateUrl: './login.component.html',
@@ -26,15 +27,16 @@ export class LoginComponent {
       let user = this.users[index];
 
       if (user.login === this.nick && user.password === this.password){
-        this.message = "Pomyślnie zalogowano jako " + this.nick;
+        this.menuBarService.loggedUser = user;
 
         if(user.role === 'admin'){
           this.menuBarService.showAdminComponent();
-          this.message = this.message + " - administrator";
         }else{
           this.menuBarService.showWorkerComponent();
         }
 
+        //navigate to home
+        this.router.navigate(['/home']);
         isLogged = true;
         break;
       }else{        
@@ -58,7 +60,8 @@ export class LoginComponent {
   }
 
   constructor(private userService: UserService,
-              private menuBarService: MenuBarService){
+              private menuBarService: MenuBarService,
+              private router: Router){
 
   }
 }

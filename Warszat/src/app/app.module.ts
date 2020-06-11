@@ -15,6 +15,7 @@ import { ReviewPartsComponent } from './review-parts/review-parts.component';
 import { ReviewApplicationWorkerComponent } from './review-application-worker/review-application-worker.component';
 import { BrowseEmployeesComponent } from './browse-employees/browse-employees.component';
 import { BrowseReportComponent } from './browse-report/browse-report.component';
+import { ManageAccountComponent } from './manage-account/manage-account.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowseReportComponent } from './browse-report/browse-report.component';
     ReviewPartsComponent,
     ReviewApplicationWorkerComponent,
     BrowseEmployeesComponent,
-    BrowseReportComponent
+    BrowseReportComponent,
+    ManageAccountComponent
   ],
   imports: [
     BrowserModule,

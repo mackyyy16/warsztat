@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../shared/http-services/userService';
 import { IUser } from '../shared/models/user';
+import { Router } from '@angular/router';
 
 @Component({
    templateUrl: './register.component.html',
@@ -26,7 +27,8 @@ export class RegisterComponent {
     role: ''
   };
 
-  constructor(private userService: UserService){
+  constructor(private userService: UserService,
+              private router: Router){
       this.userService.getUser().subscribe({
         next: usersFromApi => this.users = usersFromApi,
         error: err => err = err
@@ -60,5 +62,7 @@ export class RegisterComponent {
       next: usersFromApi => val = usersFromApi,
       error:err => err=err
     });
+
+    this.router.navigate(['/login']);
   }
 }

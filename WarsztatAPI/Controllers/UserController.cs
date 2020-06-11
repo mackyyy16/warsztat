@@ -45,5 +45,12 @@ namespace WarsztatAPI.Controllers
                 context.SaveChanges();
             }
         }
+
+        [HttpPut]
+        public void UpdateUser(User user)
+        {
+            context.user.Update(user);
+            context.SaveChanges();
+        }
     }
 }

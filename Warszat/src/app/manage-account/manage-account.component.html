@@ -1,0 +1,23 @@
+<h1>Zarządzaj kontem</h1>
+
+<label>Imię</label>
+<input type="text" [(ngModel)]="user.name">
+<br>
+<label>Nazwisko</label>
+<input type="text" [(ngModel)]="user.surname">
+<br>
+<label>Płeć</label>
+<input type="text" [(ngModel)]="user.sex">
+<br>
+<label>E-mail</label>
+<input type="text" [(ngModel)]="user.email">
+<br>
+<label>Data urodzenia</label>
+<input type="text" [(ngModel)]="user.dateofbirth">
+<br>
+<label>Nr telefonu</label>
+<input type="text" [(ngModel)]="user.phonenumber">
+<br>
+<button (click)="save()">
+    Zapisz
+</button>

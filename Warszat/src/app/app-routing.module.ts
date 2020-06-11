@@ -14,6 +14,7 @@ import { ReviewPartsComponent } from './review-parts/review-parts.component';
 import { ReviewApplicationWorkerComponent } from './review-application-worker/review-application-worker.component';
 import { BrowseEmployeesComponent } from './browse-employees/browse-employees.component';
 import { BrowseReportComponent } from './browse-report/browse-report.component';
+import { ManageAccountComponent } from './manage-account/manage-account.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'manage-account', component: ManageAccountComponent }
 ];
 
 @NgModule({

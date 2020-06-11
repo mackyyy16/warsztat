@@ -37,6 +37,14 @@ export class UserService{
             );
     }
 
+    updateUser(user: IUser): Observable<IUser>{
+        return this.http.put<IUser>(this.url, user)
+            .pipe(
+                tap(data => console.log('allusers; '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
+    }
+
     private error(err: HttpErrorResponse){
         return throwError('error');
     }
