@@ -1,16 +1,17 @@
-<div>
-    <label>Login: </label>
-    <input type="text" [(ngModel)]="nick">
+<div class="box">
+    <h2>Logowanie</h2>
+    <input type="text" [(ngModel)]="nick" placeholder="Login">
     <br>
-    <label>Hasło: </label>
-    <input type="text" [(ngModel)]="password">
+    <input type="text" [(ngModel)]="password" placeholder="Hasło">
     <br>
 </div>
 <br>
-<div>
+<div class="click">
     <button (click)="login()">Zaloguj</button>
 </div>
 
-<div *ngIf="showmessage">
-    {{message}} 
+<div class="login">
+    <div *ngIf="showmessage">
+        {{message}} 
+    </div>
 </div>

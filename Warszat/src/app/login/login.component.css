@@ -1,0 +1,61 @@
+h2{
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.box input[type = "text"], .box input[type = "password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    border: 2px solid #c34f4f;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type = "text"]:focus, .box input[type = "password"]:focus{
+    width: 220px;
+    border-color: #751b1b;
+}
+
+.click{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+button{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    border: 2px solid #751b1b;
+    padding: 14px 40px;
+    width: 150px;
+    outline: none;
+    color: rgba(255, 255, 255, 0.561);
+    border-radius: 24px;
+    transition: 0.25s;
+    background: #c34f4f;
+    }
+
+button:focus{
+    width: 170px;
+    border-color: #751b1b;
+}
+
+.login{
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+  
+  
