@@ -13,12 +13,12 @@ export class UserService{
     }
     private url = 'http://localhost:5001/api/users';
 
-    getUser(): Observable<IUser[]>{
+    async getUser(): Promise<IUser[]>{
         return this.http.get<IUser[]>(this.url)
             .pipe(
                 tap(data => console.log('allusers; '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     addUser(user: IUser): Observable<IUser>{
@@ -29,12 +29,12 @@ export class UserService{
             );
     }
 
-    removeUser(user: IUser): Observable<IUser>{
+    async removeUser(user: IUser): Promise<IUser>{
         return this.http.delete<IUser>(this.url + '/' + user.id_user)
             .pipe(
                 tap(data => console.log('Users:' + JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     updateUser(user: IUser): Observable<IUser>{

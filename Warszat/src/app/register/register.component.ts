@@ -29,10 +29,9 @@ export class RegisterComponent {
 
   constructor(private userService: UserService,
               private router: Router){
-      this.userService.getUser().subscribe({
-        next: usersFromApi => this.users = usersFromApi,
-        error: err => err = err
-      });
+    this.userService.getUser().then(data => {
+      this.users = data;
+    });
   }
 
   register()
