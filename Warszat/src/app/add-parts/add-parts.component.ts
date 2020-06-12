@@ -19,9 +19,8 @@ export class AddPartsComponent {
   public previousPartId = 0;
 
   constructor(private partService: PartService){
-    this.partService.getParts().subscribe({
-      next: partsFromApi => this.parts = partsFromApi,
-      error:err => err=err
+    this.partService.getParts().then(data => {
+      this.parts = data;
     });
   }
 

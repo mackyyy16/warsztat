@@ -39,19 +39,16 @@ export class ReviewApplicationWorkerComponent {
       error:err => err=err
     });
 
-    this.partsService.getParts().subscribe({
-      next: partsFromApi => {
-        this.partsFromDb = partsFromApi;
+    this.partsService.getParts().then(partsFromApi => {
+      this.partsFromDb = partsFromApi;
 
-        for (let index = 0; index < this.partsFromDb.length; index++) {
-          let element = this.partsFromDb[index];
-          let value = element.name + " - " + element.producer;
-          this.partsListToCombo.push(value);          
-        }
+      for (let index = 0; index < this.partsFromDb.length; index++) {
+        let element = this.partsFromDb[index];
+        let value = element.name + " - " + element.producer;
+        this.partsListToCombo.push(value);          
+      }
 
-        this.partsListToCombo.sort();
-      },
-      error: err => err = err
+      this.partsListToCombo.sort();
     });
 
     this.repairPartService.getRepairParts().subscribe({

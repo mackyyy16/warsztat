@@ -15,12 +15,12 @@ export class PartService{
     }
     private url = 'http://localhost:5001/api/parts';
 
-    getParts(): Observable<IPart[]>{
+    async getParts(): Promise<IPart[]>{
         return this.http.get<IPart[]>(this.url)
             .pipe(
                 tap(data => console.log('Parts: '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     addPart(part: IPart): Observable<IPart>{
@@ -31,12 +31,12 @@ export class PartService{
             );
     }
 
-    removePart(part: IPart): Observable<IPart>{
+    async removePart(part: IPart): Promise<IPart>{
         return this.http.delete<IPart>(this.url+'/'+part.id_part)
             .pipe(
                 tap(data => console.log('Parts: '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     private error(err: HttpErrorResponse){
