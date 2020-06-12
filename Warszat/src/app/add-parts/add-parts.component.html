@@ -1,21 +1,23 @@
-<h1>Dodaj część</h1>
+<div class="contener">
+    <h1>Dodaj część</h1>
 
-<div>
-    <label>Nazwa: </label>
-    <input type="text" [(ngModel)]="newPart.name">
+    <div>
+        <label>Nazwa: </label>
+        <input type="text" [(ngModel)]="newPart.name">
+        <br>
+        <label>Producent: </label>
+        <input type="text" [(ngModel)]="newPart.producer">
+        <br>
+        <label>Cena: </label>
+        <input type="number" [(ngModel)]="newPart.price">
+        <br>
+    </div>
     <br>
-    <label>Producent: </label>
-    <input type="text" [(ngModel)]="newPart.producer">
+    <div>
+        <button (click)="add()">Dodaj</button>
+    </div>
     <br>
-    <label>Cena: </label>
-    <input type="number" [(ngModel)]="newPart.price">
-    <br>
-</div>
-<br>
-<div>
-    <button (click)="add()">Dodaj</button>
-</div>
-<br>
-<div *ngIf="showMessage">
-    <label>Pomyślnie dodano nową część!</label>
+    <div *ngIf="showMessage">
+        <label>Pomyślnie dodano nową część!</label>
+    </div>
 </div>

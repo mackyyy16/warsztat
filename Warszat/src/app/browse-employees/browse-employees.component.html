@@ -1,33 +1,35 @@
-<h1>Pracownicy</h1>
+<div class="contener">
+    <h1>Pracownicy</h1>
 
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Imię</th>
-                <th>Nazwisko</th>
-                <th>Płeć</th>
-                <th>E-mail</th>
-                <th>Data urodzenia</th>
-                <th>Nr tel</th>
-                <th>IdNaprawy???</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{user.name}}</td>
-                <td>{{user.surname}}</td>
-                <td>{{user.sex}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.dateofbirth}}</td>
-                <td>{{user.phonenumber}}</td>
-                <td>{{user.idrepair}}</td>
-                <td>
-                    <button (click)="removeUser(user)">
-                        Usuń
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Płeć</th>
+                    <th>E-mail</th>
+                    <th>Data urodzenia</th>
+                    <th>Numer telefonu</th>
+                    <th>Numer naprawy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.surname}}</td>
+                    <td>{{user.sex}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.dateofbirth}}</td>
+                    <td>{{user.phonenumber}}</td>
+                    <td>{{user.idrepair}}</td>
+                    <td>
+                        <button (click)="removeUser(user)">
+                            Usuń
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

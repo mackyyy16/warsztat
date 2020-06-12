@@ -11,7 +11,7 @@ export class BrowseReportComponent {
   repairs: IRepair[] = [];
   raportConfig: string[] = ['dzienny', 'miesięczny', 'roczny'];
   selectedValue: string = '';
-  date: string = "08.06.2020";
+  date: string = '';
   showData: boolean = false;
   showRepairs: IRepair[] = [];
   sumOfRepairs: number = 0;

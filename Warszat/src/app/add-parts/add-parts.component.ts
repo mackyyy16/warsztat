@@ -10,9 +10,9 @@ export class AddPartsComponent {
 
   public newPart: IPart = {
     id_part: 1,
-    name: "Opona letnia",
-    producer: "Dębica",
-    price: 150
+    name: '',
+    producer: '',
+    price: null
   };
   
   public parts: IPart[] = [];

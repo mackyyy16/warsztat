@@ -1,45 +1,47 @@
-<h1>Przeglądaj raporty</h1>
+<div class="contener">
+    <h1>Przeglądaj raporty</h1>
 
-<label>Wpisz datę: </label>
-<input type="string" [(ngModel)]="date">
-<br><br>
-
-<label>Wybierz jaki raport chcesz przeglądać: </label>
-<select [(ngModel)]="selectedValue">
-    <option *ngFor="let item of raportConfig" [ngValue]="item">{{item}}</option>
-</select>
-<br><br>
-
-<button (click)="show()">
-    Pokaż
-</button>
-<br><br>
-
-<div *ngIf="showData">
-    <table>
-        <thead>
-            <tr>
-                <th>Id naprawy</th>
-                <th>Data rozpoczęcia</th>
-                <th>Data zakończenia</th>
-                <th>Status</th>
-                <th>Opis</th>
-                <th>Cena naprawy</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let repair of showRepairs">
-                <td>{{repair.id_repair}}</td>
-                <td>{{repair.start_date}}</td>
-                <td>{{repair.end_date}}</td>
-                <td>{{repair.status}}</td>
-                <td>{{repair.description}}</td>
-                <td>{{repair.price}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <label>Wpisz datę: </label>
+    <input type="string" [(ngModel)]="date">
     <br><br>
 
-    <label>Suma cen usług w danym okresie to: </label>
-    <label>{{sumOfRepairs}}</label>
+    <label>Wybierz jaki raport chcesz przeglądać: </label>
+    <select [(ngModel)]="selectedValue">
+        <option *ngFor="let item of raportConfig" [ngValue]="item">{{item}}</option>
+    </select>
+    <br><br>
+
+    <button (click)="show()">
+        Pokaż
+    </button>
+    <br><br>
+
+    <div *ngIf="showData">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id naprawy</th>
+                    <th>Data rozpoczęcia</th>
+                    <th>Data zakończenia</th>
+                    <th>Status</th>
+                    <th>Opis</th>
+                    <th>Cena naprawy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let repair of showRepairs">
+                    <td>{{repair.id_repair}}</td>
+                    <td>{{repair.start_date}}</td>
+                    <td>{{repair.end_date}}</td>
+                    <td>{{repair.status}}</td>
+                    <td>{{repair.description}}</td>
+                    <td>{{repair.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+
+        <label>Suma cen usług w danym okresie to: </label>
+        <label>{{sumOfRepairs}}</label>
+    </div>
 </div>

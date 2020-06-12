@@ -1,27 +1,29 @@
-<h1>Przeglądaj części</h1>
+<div class="contener">
+    <h1>Przeglądaj części</h1>
 
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>Nazwa</th>
-                <th>Producent</th>
-                <th>Cena [zł]</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let part of parts">
-                <td>{{part.name}}</td>
-                <td>{{part.producer}}</td>
-                <td>{{part.price}}</td>
-                <td>
-                    <button (click)="removePart(part)">
-                        Usuń
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Producent</th>
+                    <th>Cena [zł]</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let part of parts">
+                    <td>{{part.name}}</td>
+                    <td>{{part.producer}}</td>
+                    <td>{{part.price}}</td>
+                    <td>
+                        <button (click)="removePart(part)">
+                            Usuń
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
 </div>

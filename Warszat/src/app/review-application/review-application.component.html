@@ -1,77 +1,79 @@
-<h1>Przegladaj ogloszenie</h1>
-<div>
-    <label>Wprowadz nr zgloszenia:</label>
-    <input type="number" [(ngModel)]="nrZgloszenia">
-    
-    <button (click)="show()">Pokaz</button>
-</div>
-<br>
-<div *ngIf="showInfo">    
+<div class="contener">
+    <h1>Przegladaj ogloszenie</h1>
     <div>
+        <label>Wprowadz nr zgloszenia:</label>
+        <input type="number" [(ngModel)]="nrZgloszenia">
+        
+        <button (click)="show()">Pokaz</button>
+    </div>
+    <br>
+    <div *ngIf="showInfo">    
         <div>
-            <label>Marka: </label>
-            <label>{{newCar.mark}}</label>
+            <div class="car">
+                <label>Marka: </label>
+                <label>{{newCar.mark}}</label>
+                <br>
+                <label>Model: </label>
+                <label>{{newCar.model}}</label>
+                <br>
+                <label>Nr rejestracyjny: </label>
+                <label>{{newCar.regnumber}}</label>
+                <br>
+                <label>Nr vin: </label>
+                <label>{{newCar.nrvin}}</label>
+                <br>
+                <label>Przebieg: </label>
+                <label>{{newCar.course}}</label>
+                <br>
+                <label>Opis usterki: </label>
+                <label>{{newCar.descfault}}</label>
+                <br>
+            </div>
             <br>
-            <label>Model: </label>
-            <label>{{newCar.model}}</label>
-            <br>
-            <label>Nr rejestracyjny: </label>
-            <label>{{newCar.regnumber}}</label>
-            <br>
-            <label>Nr vin: </label>
-            <label>{{newCar.nrvin}}</label>
-            <br>
-            <label>Przebieg: </label>
-            <label>{{newCar.course}}</label>
-            <br>
-            <label>Opis usterki: </label>
-            <label>{{newCar.descfault}}</label>
-            <br>
-        </div>
-        <br>
-        <h4>Informacje</h4>
-        <div>
-            <label>Data Rozpoczecia: </label>
-            <label>{{repairInfo.start_date}}</label>
-            <br>
-            <label>Data Zakonczenia: </label>
-            <label>{{repairInfo.end_date}}</label>
-            <br>
-            <label>Status: </label>
-            <label>{{repairInfo.status}}</label>
-            <br>
-            <label>Opis: </label>
-            <label>{{repairInfo.description}}</label>
-            <br><br><br><br>
-            <label>Użyte części podaczas naprawy: </label>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nazwa</th>
-                        <th>Producent</th>
-                        <th>Cena [zł]</th>
-                        <th>Ilość</th>
-                        <th>Suma</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let part of partsInfo">
-                        <td>{{part.part.name}}</td>
-                        <td>{{part.part.producer}}</td>
-                        <td>{{part.part.price}}</td>
-                        <td>{{part.amount}}</td>
-                        <td>{{part.amount * part.part.price}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br><br><br><br>
-            <label>Koszt całkowity: </label>
-            <label>{{repairInfo.price}}</label>
-            <br>
-        </div>
-    </div>    
-</div>
-<br>
-<div *ngIf="showErrorMessage">
-    <label>Nie ma takiego zgłoszenia!</label>
+            <h4>Informacje</h4>
+            <div>
+                <label>Data Rozpoczecia: </label>
+                <label>{{repairInfo.start_date}}</label>
+                <br>
+                <label>Data Zakonczenia: </label>
+                <label>{{repairInfo.end_date}}</label>
+                <br>
+                <label>Status: </label>
+                <label>{{repairInfo.status}}</label>
+                <br>
+                <label>Opis: </label>
+                <label>{{repairInfo.description}}</label>
+                <br><br><br><br>
+                <label>Użyte części podaczas naprawy: </label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nazwa</th>
+                            <th>Producent</th>
+                            <th>Cena [zł]</th>
+                            <th>Ilość</th>
+                            <th>Suma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let part of partsInfo">
+                            <td>{{part.part.name}}</td>
+                            <td>{{part.part.producer}}</td>
+                            <td>{{part.part.price}}</td>
+                            <td>{{part.amount}}</td>
+                            <td>{{part.amount * part.part.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br><br><br>
+                <label>Koszt całkowity: </label>
+                <label>{{repairInfo.price}}</label>
+                <br>
+            </div>
+        </div>    
+    </div>
+    <br>
+    <div *ngIf="showErrorMessage">
+        <label>Nie ma takiego zgłoszenia!</label>
+    </div>
 </div>

@@ -1,29 +1,31 @@
-<h1>Dodaj ogłoszenie</h1>
-<div class="testClass">
-    <label>Marka: </label>
-    <input type="text" [(ngModel)]="newCar.mark">
+<div class="contener">
+    <h1>Dodaj ogłoszenie</h1>
+    <div class="testClass">
+        <label>Marka: </label>
+        <input type="text" [(ngModel)]="newCar.mark">
+        <br>
+        <label>Model: </label>
+        <input type="text" [(ngModel)]="newCar.model">
+        <br>
+        <label>Nr rejestracyjny: </label>
+        <input type="text" [(ngModel)]="newCar.regnumber">
+        <br>
+        <label>Nr vin: </label>
+        <input type="number" [(ngModel)]="newCar.nrvin">
+        <br>
+        <label>Przebieg: </label>
+        <input type="number" [(ngModel)]="newCar.course">
+        <br>
+        <label>Opis usterki: </label>
+        <input type="text" [(ngModel)]="newCar.descfault">
+        <br>
+    </div>
     <br>
-    <label>Model: </label>
-    <input type="text" [(ngModel)]="newCar.model">
-    <br>
-    <label>Nr rejestracyjny: </label>
-    <input type="text" [(ngModel)]="newCar.regnumber">
-    <br>
-    <label>Nr vin: </label>
-    <input type="number" [(ngModel)]="newCar.nrvin">
-    <br>
-    <label>Przebieg: </label>
-    <input type="number" [(ngModel)]="newCar.course">
-    <br>
-    <label>Opis usterki: </label>
-    <input type="text" [(ngModel)]="newCar.descfault">
-    <br>
-</div>
-<br>
-<div>
-    <button (click)="add()">Dodaj</button>
-</div>
-<br><br>
-<div *ngIf="showMessage">
-    <label>Nr twojego zgloszenia to: {{newCar.id_car}}</label>
+    <div>
+        <button (click)="add()">Dodaj</button>
+    </div>
+    <br><br>
+    <div *ngIf="showMessage">
+        <label>Nr twojego zgloszenia to: {{newCar.id_car}}</label>
+    </div>
 </div>
