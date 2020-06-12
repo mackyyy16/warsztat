@@ -10,20 +10,20 @@ export class BrowseEmployeesComponent {
   public users: IUser[] = [];
 
   constructor(private userService: UserService){
-    this.userService.getUser().subscribe({
-      next: usersFromApi => this.users = usersFromApi,
-      error: err => err = err
+    this.userService.getUser().then(data => {
+      this.users = data;
     });
   }
 
-  removeUser(user: IUser){
+  async removeUser(user: IUser){
     debugger;
     let val;
     
-    this.userService.removeUser(user).subscribe({
-      next: usersFromApi => val = usersFromApi,
-      error: err => err = err
-    });
+    await this.userService.removeUser(user);
+
     //dodać odświeżanie listy
+    await this.userService.getUser().then(data => {
+      this.users = data;
+    });
   }
 }

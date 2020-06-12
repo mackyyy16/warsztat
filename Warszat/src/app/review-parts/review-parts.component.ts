@@ -11,20 +11,18 @@ export class ReviewPartsComponent {
   public parts: IPart[] = [];  
 
   constructor(private partService: PartService){
-    this.partService.getParts().subscribe({
-      next: partsFromApi => this.parts = partsFromApi,
-      error:err => err=err
+    this.partService.getParts().then(data => {
+      this.parts = data;
     });
   }
   
-  removePart(part: any){
+  async removePart(part: any){
     debugger;
-    let val;
-    this.partService.removePart(part).subscribe({
-      next: partsFromApi => val = partsFromApi,
-      error:err => err=err
-    });
+    await this.partService.removePart(part);
 
     //odśwież listę części
+    await this.partService.getParts().then(data => {
+      this.parts = data;
+    });
   }
 }

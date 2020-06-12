@@ -25,20 +25,20 @@ export class RepairPartService{
             );
     }
 
-    getPartPerRepair(id_repair: number): Observable<IPartWithAmount[]>{
+    async getPartPerRepair(id_repair: number): Promise<IPartWithAmount[]>{
         return this.http.get<IPartWithAmount[]>(this.url + '/' + id_repair)
             .pipe(
                 tap(data => console.log('PartWithRepairs; '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
-    addRepairPart(repairPart: IRepairPart): Observable<IRepairPart>{
+    async addRepairPart(repairPart: IRepairPart): Promise<IRepairPart>{
         return this.http.post<IRepairPart>(this.url, repairPart)
             .pipe(
                 tap(data => console.log('PartWithRepairs: '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     private error(err: HttpErrorResponse){

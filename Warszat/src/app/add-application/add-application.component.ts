@@ -8,13 +8,13 @@ import { CarService } from '../shared/http-services/carService';
 })
 export class AddApplicationComponent {
   public newCar: ICar = {
-    id_car: 3,
-    mark: "Audi",
-    model: "A4",
-    regnumber: "KS XXXXX",
-    nrvin: 12334556,
-    course: 250000,
-    descfault: "szyba",
+    id_car: 0,
+    mark: "",
+    model: "",
+    regnumber: "",
+    nrvin: null,
+    course: null,
+    descfault: "",
     id_repair: 0
   }
 
@@ -24,10 +24,9 @@ export class AddApplicationComponent {
   public previousCarId = 0;
 
   constructor(private carService: CarService){
-    this.carService.getCars().subscribe({
-      next:carsFromApi => this.cars=carsFromApi,
-      error:err => err=err
-    })
+    this.carService.getCars().then(carsFromApi => {
+      this.cars=carsFromApi;
+    });
   }
   add(){
     debugger;
@@ -51,10 +50,6 @@ export class AddApplicationComponent {
       error:err => err=err
     });
 
-    this.carService.getCars().subscribe({
-      next:carsFromApi => this.cars=carsFromApi,
-      error:err => err=err
-    })
 
     this.showMessage = true;
   }

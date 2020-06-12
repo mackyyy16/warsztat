@@ -15,12 +15,12 @@ export class CarService{
     }
     private url = 'http://localhost:5001/api/cars';
 
-    getCars(): Observable<ICar[]>{
+    async getCars(): Promise<ICar[]>{
         return this.http.get<ICar[]>(this.url)
             .pipe(
                 tap(data => console.log('allusers; '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     addCar(car: ICar): Observable<ICar>{
@@ -31,20 +31,20 @@ export class CarService{
             );
     }
 
-    getCarRepair(id_repair: number): Observable<IRepair>{
+    async getCarRepair(id_repair: number): Promise<IRepair>{
         return this.http.get<IRepair>(this.url + '/' + id_repair)
             .pipe(
                 tap(data => console.log('CarRepair: ' + JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
-    removeCar(car: ICar): Observable<ICar>{
+    async removeCar(car: ICar): Promise<ICar>{
         return this.http.delete<ICar>(this.url + '/' + car.id_car)
             .pipe(
                 tap(data => console.log('allusers; '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     private error(err: HttpErrorResponse){

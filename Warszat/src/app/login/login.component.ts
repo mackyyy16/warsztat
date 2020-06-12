@@ -53,15 +53,13 @@ export class LoginComponent {
   }
 
   ngOnInit():void{
-    this.userService.getUser().subscribe({
-      next:usersFromApi => this.users=usersFromApi,
-      error:err => this.errormessage=err
-    })
   }
 
   constructor(private userService: UserService,
               private menuBarService: MenuBarService,
-              private router: Router){
-
+              private router: Router){                
+    this.userService.getUser().then(data => {
+      this.users = data;
+    });
   }
 }

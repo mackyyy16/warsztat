@@ -17,11 +17,11 @@ export class AddPartsComponent {
   
   public parts: IPart[] = [];
   public previousPartId = 0;
+  public showMessage: boolean = false;
 
   constructor(private partService: PartService){
-    this.partService.getParts().subscribe({
-      next: partsFromApi => this.parts = partsFromApi,
-      error:err => err=err
+    this.partService.getParts().then(data => {
+      this.parts = data;
     });
   }
 
@@ -44,5 +44,6 @@ export class AddPartsComponent {
       next: partsFromApi => parts = partsFromApi,
       error:err => err=err
     }); 
+    this.showMessage = true;
   }
 }
