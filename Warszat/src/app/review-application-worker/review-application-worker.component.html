@@ -103,10 +103,9 @@
         <br>
         <label>Wybierz ilość części użytych podczas naprawy: </label>
         <input type="number" [(ngModel)]="enteredQuantity">
-        <br><br>             
+        <br><br>  
+        <button (click)="save()">
+            Zapisz
+        </button>           
     </div>
-    <br><br>
-    <button (click)="save()">
-        Zapisz
-    </button>
 </div>

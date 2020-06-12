@@ -34,10 +34,9 @@ export class ReviewApplicationWorkerComponent {
               private repairPartService: RepairPartService,
               private partsService: PartService){
 
-    this.carService.getCars().subscribe({
-      next:carsFromApi => this.applications=carsFromApi,
-      error:err => err=err
-    });
+    this.carService.getCars().then(carsFromApi => {
+      this.applications = carsFromApi;
+    });  
 
     this.partsService.getParts().then(partsFromApi => {
       this.partsFromDb = partsFromApi;
@@ -55,6 +54,7 @@ export class ReviewApplicationWorkerComponent {
       next: partsPerRepairFromApi => this.partsPerRepairAll = partsPerRepairFromApi,
       error: err => err = err
     });
+    debugger;
   }
 
   showInfo(app:ICar){
@@ -66,33 +66,31 @@ export class ReviewApplicationWorkerComponent {
       error:err => err=err
     });
 
-    this.repairPartService.getPartPerRepair(app.id_repair).subscribe({
-      next:partPerRepairFromApi => {
-        this.partsPerRepairInfo = partPerRepairFromApi;
+    this.repairPartService.getPartPerRepair(app.id_repair).then(partPerRepairFromApi => {
+      this.partsPerRepairInfo = partPerRepairFromApi;
 
         if(partPerRepairFromApi.length == 0){
           this.showParts = false;
         }else{
           this.showParts = true;
         }
-      },
-      error:err => err=err
-    });
+    });    
 
     this.show = true;
   }
 
-  removeApp(app:ICar){
-    let val;
-    this.carService.removeCar(app).subscribe({
-      next:carsFromApi => val = carsFromApi,
-      error:err => err=err
-    });
+  async removeApp(app:ICar){
+    await this.carService.removeCar(app);
     
-    //odśwież listę
+    //odświeżenie listy
+    await this.carService.getCars().then(carsFromApi => {
+      this.applications = carsFromApi;
+    });  
+
+    this.show = false;
   }
 
-  save(){
+  async save(){
     debugger;
 
     if(this.selectedValue && this.enteredQuantity){
@@ -110,7 +108,7 @@ export class ReviewApplicationWorkerComponent {
       };
 
       //set next id
-      let sortedPartsPerRepairAll = [...this.partsPerRepairAll.sort((a, b) => a.id_part - b.id_part).reverse()];
+      let sortedPartsPerRepairAll = [...this.partsPerRepairAll.sort((a, b) => a.id - b.id).reverse()];
       let newPartPerRepairId = sortedPartsPerRepairAll[0].id + 1;
 
       if(this.previousPartId === 0){
@@ -122,12 +120,20 @@ export class ReviewApplicationWorkerComponent {
       }
       //
 
+      debugger;
       //send repairPerPart
-      let val;
-      this.repairPartService.addRepairPart(repairPart).subscribe({
-        next: repairPartFromApi => val = repairPartFromApi,
-        error: err => err = err
-      });      
+      await this.repairPartService.addRepairPart(repairPart); 
+
+      //odświeżyć listę
+      this.repairPartService.getPartPerRepair(this.selectedApp.id_repair).then(partPerRepairFromApi => {
+        this.partsPerRepairInfo = partPerRepairFromApi;
+  
+          if(partPerRepairFromApi.length == 0){
+            this.showParts = false;
+          }else{
+            this.showParts = true;
+          }
+      });    
     }
 
     let val1;
@@ -135,7 +141,5 @@ export class ReviewApplicationWorkerComponent {
       next: repairFromApi => val1 = repairFromApi,
       error: err => err = err
     });
-
-    //odświeżyć listę
   }
 }
