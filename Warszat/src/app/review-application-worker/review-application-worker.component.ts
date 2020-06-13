@@ -9,6 +9,8 @@ import { IPartWithAmount } from '../shared/models/part-with-amount';
 import { IRepairPart } from '../shared/models/repair-part';
 import { PartService } from '../shared/http-services/partService';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { UserService } from '../shared/http-services/userService';
+import { UserRepairService } from '../shared/http-services/userRepairService';
 
 @Component({
    templateUrl: './review-application-worker.component.html',
@@ -23,7 +25,9 @@ export class ReviewApplicationWorkerComponent {
   show:boolean = false;
   showParts: boolean = false;
   selectedValue: string = "";
+  selectedUserToRepair: string = "";
   partsListToCombo: string[] = [];
+  usersListToCombo: string[] = [];
   partsFromDb: IPart[] = [];
   enteredQuantity: number;
   selectedApp: ICar;
@@ -32,7 +36,9 @@ export class ReviewApplicationWorkerComponent {
   constructor(private carService: CarService,
               private repairService: RepairService,
               private repairPartService: RepairPartService,
-              private partsService: PartService){
+              private partsService: PartService,
+              private userService: UserService,
+              private userRepairService: UserRepairService){
 
     this.carService.getCars().then(carsFromApi => {
       this.applications = carsFromApi;
@@ -54,17 +60,34 @@ export class ReviewApplicationWorkerComponent {
       next: partsPerRepairFromApi => this.partsPerRepairAll = partsPerRepairFromApi,
       error: err => err = err
     });
+
+    this.userService.getUser().then(usersFromApi => {
+
+      usersFromApi.forEach(element => {
+        if(element.role === "worker"){
+          this.usersListToCombo.push(element.name);
+        }
+      });
+    });
     debugger;
   }
 
-  showInfo(app:ICar){
+  async showInfo(app:ICar){
     debugger;
     this.selectedApp = app;
 
-    this.repairService.getRepair(app.id_repair).subscribe({
-      next:carsFromApi => this.rapairInfo=carsFromApi,
-      error:err => err=err
+    
+    await this.repairService.getRepair(app.id_repair).then(carsFromApi => {
+      this.rapairInfo=carsFromApi;
     });
+    
+    //todo
+    // let val;
+    // await this.userRepairService.getUserRepair(this.rapairInfo).then(userFromApi => {
+    //   val = userFromApi;
+    //   this.selectedUserToRepair = userFromApi.name;
+    // });
+    //
 
     this.repairPartService.getPartPerRepair(app.id_repair).then(partPerRepairFromApi => {
       this.partsPerRepairInfo = partPerRepairFromApi;
@@ -74,7 +97,7 @@ export class ReviewApplicationWorkerComponent {
         }else{
           this.showParts = true;
         }
-    });    
+    });
 
     this.show = true;
   }
@@ -141,5 +164,8 @@ export class ReviewApplicationWorkerComponent {
       next: repairFromApi => val1 = repairFromApi,
       error: err => err = err
     });
+
+    // let userRepair = IUserRepair{}
+    // this.userRepairService.addUserRepair()
   }
 }

@@ -23,12 +23,12 @@ export class RepairService{
             );
     }
 
-    getRepair(id_repair: number): Observable<IRepair>{
+    async getRepair(id_repair: number): Promise<IRepair>{
         return this.http.get<IRepair>(this.url + '/' + id_repair)
             .pipe(
                 tap(data => console.log('Repairs; '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     addRepair(repair: IRepair): Observable<IRepair>{

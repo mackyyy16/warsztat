@@ -24,6 +24,11 @@
                     <td>{{user.phonenumber}}</td>
                     <td>{{user.idrepair}}</td>
                     <td>
+                        <button (click)="showUserRepair(user)">
+                            Pokaż
+                        </button>
+                    </td>
+                    <td>
                         <button (click)="removeUser(user)">
                             Usuń
                         </button>
@@ -31,5 +36,31 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <br>
+    <div *ngIf="showRepairs">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nr naprawy</th>
+                    <th>Data Rozpoczęcia</th>
+                    <th>Data Zakończenia</th>
+                    <th>Status</th>
+                    <th>Opis</th>
+                    <th>Koszt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userRepair of userRepairsInfo">
+                    <td>{{userRepair.id_repair}}</td>
+                    <td>{{userRepair.start_date}}</td>
+                    <td>{{userRepair.end_date}}</td>
+                    <td>{{userRepair.status}}</td>
+                    <td>{{userRepair.description}}</td>
+                    <td>{{userRepair.price}}</td>
+                </tr>
+            </tbody>        
+        </table>
+        <br><br>
     </div>
 </div>
