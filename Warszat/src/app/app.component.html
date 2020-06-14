@@ -15,24 +15,25 @@
 </head>
 
 <body>
-   <div class="login">
-	   <div *ngIf="!(menuBarService.isLogged | async)">
-		   <li><a [routerLink]="['/login']">Logowanie</a></li>
-		   <li><a [routerLink]="['/register']">Zarejestruj się</a></li>
-		</div>
-		<div *ngIf="(menuBarService.isLogged | async)">
-			<label>Witaj {{menuBarService.loggedUser.name}}</label><br>
-			<li><a [routerLink]="['/manage-account']">Zarządzaj kontem</a></li>
-			<button (click)="logOff()">
-				Wyloguj
-			</button>
-		</div>
-   </div>
 	<div class="wrapper">
 		<div class="header">
 		 <div class="logo">
-          <h1 class="logo">Warsztat samochodowy</h1>
+		  <h1>Warsztat samochodowy</h1>
+		  <h2>Profesjonalny warsztat w Twojej okolicy</h2>
 		 </div>
+		 <div class="login">
+			<div *ngIf="!(menuBarService.isLogged | async)">
+				<li><a [routerLink]="['/login']">Logowanie</a></li>
+				<li><a [routerLink]="['/register']">Zarejestruj się</a></li>
+			 </div>
+			 <div *ngIf="(menuBarService.isLogged | async)">
+				 <label>Witaj {{menuBarService.loggedUser.name}}</label><br>
+				 <li><a [routerLink]="['/manage-account']">Zarządzaj kontem</a></li>
+				 <button (click)="logOff()">
+					 Wyloguj
+				 </button>
+			 </div>
+		</div>
 		</div>
 		<div class="nav">
 			<ol>
@@ -62,6 +63,25 @@
         <li><a [routerLink]="['/about']">O naszej firmie</a></li>
         <li><a [routerLink]="['/contact']">Kontakt</a></li>
 			</ol>
+		</div>
+
+		<div class="background">
+			<img src="assets/images/tlo.jpg" width="100%" height="400">
+		</div>
+
+		<div class="info">
+			<div class="years">
+				<i>od </i> <b>10</b> <i> lat na rynku</i>
+			</div>
+			<div class="expert">
+				<b>5</b> <i> specjalistów</i>
+			</div>
+			<div class="parts">
+				<b>150</b> <i> dostawców częsci</i>
+			</div>
+			<div class="spareparts">
+				<b>50 000</b> <i> części zamiennych</i>
+			</div>
 		</div>
 		
 		<div class="content">
