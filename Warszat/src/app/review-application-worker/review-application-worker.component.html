@@ -4,7 +4,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Id naprawy</th>
+                    <th>Numer naprawy</th>
                     <th>Marka</th>
                     <th>Model</th>
                     <th>Nr Rejestracyjny</th>
@@ -43,9 +43,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Id naprawy</th>
-                        <th>Data Rozpoczęcia</th>
-                        <th>Data Zakończenia</th>
+                        <th>Numer naprawy</th>
+                        <th>Data rozpoczęcia</th>
+                        <th>Data zakończenia</th>
                         <th>Status</th>
                         <th>Opis</th>
                         <th>Koszt</th>
@@ -74,12 +74,13 @@
 
             <div *ngIf="showParts">
                 <label>Użyte części podaczas naprawy: </label>
+                <br><br>
                 <table>
                     <thead>
                         <tr>
                             <th>Nazwa</th>
                             <th>Producent</th>
-                            <th>Cena [zł]</th>
+                            <th>Cena</th>
                             <th>Ilość</th>
                             <th>Suma</th>
                         </tr>
