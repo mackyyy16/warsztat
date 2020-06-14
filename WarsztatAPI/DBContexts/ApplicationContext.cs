@@ -20,5 +20,6 @@ namespace WarsztatAPI.DBContexts
         public DbSet<Repair> repair { get; set; }
         public DbSet<Part> part { get; set; }
         public DbSet<RepairPart> repair_part { get; set; }
+        public DbSet<UserRepair> user_repair { get; set; }
     }
 }

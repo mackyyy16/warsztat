@@ -40,6 +40,11 @@
         <br><br><br>
         
         <div *ngIf="show">
+            <label>Pracownik przypisany do naprawy: </label>
+            <select [(ngModel)]="selectedUserToRepair">
+                <option *ngFor="let item of usersListToCombo">{{item}}</option>
+            </select>
+            <br><br>
             <table>
                 <thead>
                     <tr>
