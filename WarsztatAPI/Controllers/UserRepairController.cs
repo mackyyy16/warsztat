@@ -49,17 +49,27 @@ namespace WarsztatAPI.Controllers
         [Route("user/{idRepair}")]
         public IActionResult GetUserRepair(int idRepair)
         {
-            var userId = context.user_repair.Where(q => q.id_repair == idRepair).FirstOrDefault().id_user;
+            var userRapairList = context.user_repair.Where(q => q.id_repair == idRepair).ToList();
 
-            var user = context.user.Where(q => q.id_user == userId).FirstOrDefault();
-
-            return Ok(user);
+            if (userRapairList.Any()){
+                var userId = userRapairList.FirstOrDefault().id_user;
+                var user = context.user.Where(q => q.id_user == userId).FirstOrDefault();
+                return Ok(user);
+            }
+            return NoContent();
         }
 
         [HttpPost]
         public void AddUserRepair(UserRepair userRepair)
         {
             context.user_repair.Add(userRepair);
+            context.SaveChanges();
+        }
+
+        [HttpPut]
+        public void UpdateUserRepair(UserRepair userRepair)
+        {
+            context.user_repair.Update(userRepair);
             context.SaveChanges();
         }
     }

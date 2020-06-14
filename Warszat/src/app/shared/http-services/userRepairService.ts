@@ -16,12 +16,12 @@ export class UserRepairService{
     }
     private url = 'http://localhost:5001/api/userRepair';
 
-    getUserRepairs(): Observable<IUserRepair[]>{
+    async getUserRepairs(): Promise<IUserRepair[]>{
         return this.http.get<IUserRepair[]>(this.url)
             .pipe(
                 tap(data => console.log('UserRepairs: '+ JSON.stringify(data))),
                 catchError(this.error)
-            );
+            ).toPromise();
     }
 
     async getRepairsPerUser(userId: number): Promise<IRepair[]>{
@@ -46,6 +46,14 @@ export class UserRepairService{
                 tap(data => console.log('UserRepairs '+ JSON.stringify(data))),
                 catchError(this.error)
             ).toPromise();
+    }
+
+    updateUserRepair(userRepair: IUserRepair): Observable<IUserRepair>{
+        return this.http.put<IUserRepair>(this.url, userRepair)
+            .pipe(
+                tap(data => console.log('UserRepairs: '+ JSON.stringify(data))),
+                catchError(this.error)
+            );
     }
 
 

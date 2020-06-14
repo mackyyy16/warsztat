@@ -55,6 +55,7 @@ export class ReviewApplicationComponent {
         else{
           this.showInfo = false;
         }
+        this.showErrorMessage = false;
       }else{
         this.showErrorMessage = true;
         //nie ma takiego zgłoszenia

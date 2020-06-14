@@ -8,6 +8,5 @@ export interface IUser {
         email: string;
         dateofbirth: string;
         phonenumber: number;
-        idrepair: number;
         role: string;
 }

@@ -22,7 +22,6 @@ export class RegisterComponent {
     dateofbirth: '',
     phonenumber: null,
     id_user: 0,
-    idrepair: 0,
     sex: '',
     role: ''
   };
@@ -57,11 +56,12 @@ export class RegisterComponent {
       this.user.sex = "women";
     }
 
+    this.user.role = "worker";
     this.userService.addUser(this.user).subscribe({
       next: usersFromApi => val = usersFromApi,
       error:err => err=err
     });
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 }

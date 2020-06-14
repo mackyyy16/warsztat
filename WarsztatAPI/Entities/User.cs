@@ -13,6 +13,5 @@ namespace WarsztatApi.Entities {
         public string dateofbirth { get; set;}
         public int phonenumber { get; set; }
         public string role { get; set; }
-        public int idrepair { get; set;}
     }
 }

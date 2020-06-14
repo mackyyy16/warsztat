@@ -11,6 +11,8 @@ import { PartService } from '../shared/http-services/partService';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { UserService } from '../shared/http-services/userService';
 import { UserRepairService } from '../shared/http-services/userRepairService';
+import { IUser } from '../shared/models/user';
+import { IUserRepair } from '../shared/models/user-repair';
 
 @Component({
    templateUrl: './review-application-worker.component.html',
@@ -32,6 +34,8 @@ export class ReviewApplicationWorkerComponent {
   enteredQuantity: number;
   selectedApp: ICar;
   previousPartId = 0;
+  users: IUser[] = [];
+  repairUser: IUser;
 
   constructor(private carService: CarService,
               private repairService: RepairService,
@@ -65,6 +69,7 @@ export class ReviewApplicationWorkerComponent {
 
       usersFromApi.forEach(element => {
         if(element.role === "worker"){
+          this.users.push(element);
           this.usersListToCombo.push(element.name);
         }
       });
@@ -81,13 +86,15 @@ export class ReviewApplicationWorkerComponent {
       this.rapairInfo=carsFromApi;
     });
     
-    //todo
-    // let val;
-    // await this.userRepairService.getUserRepair(this.rapairInfo).then(userFromApi => {
-    //   val = userFromApi;
-    //   this.selectedUserToRepair = userFromApi.name;
-    // });
-    //
+    await this.userRepairService.getUserRepair(this.rapairInfo).then(userFromApi => {
+      if(userFromApi){
+        this.repairUser = userFromApi;
+        this.selectedUserToRepair = userFromApi.name;
+      }else{
+        this.selectedUserToRepair = '';
+        this.repairUser = undefined;
+      }
+    });
 
     this.repairPartService.getPartPerRepair(app.id_repair).then(partPerRepairFromApi => {
       this.partsPerRepairInfo = partPerRepairFromApi;
@@ -165,7 +172,43 @@ export class ReviewApplicationWorkerComponent {
       error: err => err = err
     });
 
-    // let userRepair = IUserRepair{}
-    // this.userRepairService.addUserRepair()
+    if(!this.repairUser){
+      //add
+      debugger;
+      let newId = 0;
+
+      await this.userRepairService.getUserRepairs().then(data =>{
+        let sortedList = [...data.sort((a, b) => a.id - b.id).reverse()];
+        newId = sortedList[0].id + 1;
+      });
+
+      let newUserRepair: IUserRepair = {
+        id: newId,
+        id_repair: this.selectedApp.id_repair,
+        id_user: this.users.filter(q => q.name === this.selectedUserToRepair)[0].id_user
+      };
+
+      let val;
+      this.userRepairService.addUserRepair(newUserRepair).subscribe({
+        next: addUser => val = addUser,
+        error: err => err = err
+      });
+    }else{
+      //update
+      let userRepairLocal: IUserRepair;
+      await this.userRepairService.getUserRepairs().then(data => {
+        userRepairLocal = data.filter(q => q.id_repair === this.selectedApp.id_repair)[0];
+      });
+
+      if(userRepairLocal){
+        userRepairLocal.id_user = this.users.filter(q => q.name === this.selectedUserToRepair)[0].id_user;
+        
+        let val;
+        this.userRepairService.updateUserRepair(userRepairLocal).subscribe({
+          next: updateUserRepairValue => val = updateUserRepairValue,
+          error: err => err = err
+        });
+      }
+    }
   }
 }
