@@ -11,7 +11,7 @@ body
 	list-style-type: none;
 	width:10%;
 	float: right;
-	padding-top: 20px;
+	margin-top: 30px;
 }
 
 .logo{
@@ -37,6 +37,7 @@ margin-left: 20px;
 text-align: center;
 font-style: italic;
 color: #c2c0c0;
+
 }
 
 .wrapper
@@ -213,14 +214,13 @@ button{
  	border: 0;
 	background: none;
 	display: block;
-	margin: 5px auto;
-	text-align: center;
-	padding: 10px 10px;
+	text-align: left;
+	margin-bottom: 10px;
+	padding: 10px;
 	outline: none;
 	color: rgba(255, 255, 255, 0.561);
 	border-radius: 24px;
 	transition: 0.25s;
-	background: #c34f4f;
 }
 
 .background{

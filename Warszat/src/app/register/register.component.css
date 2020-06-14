@@ -1,11 +1,15 @@
 .contener{
+    margin-left: 38%;
+}
+
+.h1{
     text-align: center;
     font: 200;
 }
 
 input[type=text] {
     background: none;
-    text-align: center;
+    text-align: left;
     border: 2px solid #c34f4f;
     color: white;
     border-radius: 24px;
@@ -14,7 +18,7 @@ input[type=text] {
 
 input[type=number] {
     background: none;
-    text-align: center;
+    text-align: left;
     border: 2px solid #c34f4f;
     color: white;
     border-radius: 24px;
@@ -26,13 +30,13 @@ button{
     border: 0;
     background: none;
     display: block;
-    margin: 5px auto;
+    margin-left: 13%;
     text-align: center;
     border: 1px solid #751b1b;
     padding: 10px 20px;
     width: 150px;
     outline: none;
-    color: rgba(255, 255, 255, 0.561);
+    color: rgba(255, 255, 255, 0.781);
     border-radius: 24px;
     transition: 0.25s;
     background: #c34f4f;
@@ -45,6 +49,6 @@ button:focus{
 
 label{
     padding: 1px;
-
-
 }
+
+  

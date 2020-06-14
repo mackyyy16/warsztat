@@ -45,5 +45,18 @@ button:focus{
 }
 
 
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
   
+th, td {
+    padding: 5px;
+}
+
+td{
+    text-align: center;
+}
+
   

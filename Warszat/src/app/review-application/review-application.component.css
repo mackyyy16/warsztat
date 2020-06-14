@@ -4,6 +4,7 @@
 }
 
 input[type=number] {
+    margin-top: 30px;
     background: none;
     text-align: center;
     border: 2px solid #c34f4f;
@@ -34,10 +35,12 @@ button:focus{
     border-color: #751b1b;
 }
 
-
-
 .car{
   color: white;
   padding: 15px;
+}
+
+h1{
+    font-size: 35px;
 }
 
