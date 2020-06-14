@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+th, td {
+    padding: 5px;
+}
+
+td{
+    text-align: center;
+}
