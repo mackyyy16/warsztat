@@ -1,24 +1,31 @@
 <div class="contener">
     <h1>Zarządzaj kontem</h1>
-
-    <label>Imię: </label>
-    <input type="text" [(ngModel)]="user.name">
-    <br>
-    <label>Nazwisko: </label>
-    <input type="text" [(ngModel)]="user.surname">
-    <br>
-    <label>Płeć: </label>
-    <input type="text" [(ngModel)]="user.sex">
-    <br>
-    <label>E-mail: </label>
-    <input type="text" [(ngModel)]="user.email">
-    <br>
-    <label>Data urodzenia: </label>
-    <input type="text" [(ngModel)]="user.dateofbirth">
-    <br>
-    <label>Numer telefonu: </label>
-    <input type="text" [(ngModel)]="user.phonenumber">
-    <br>
+    <table>
+        <tr>
+            <td><label>Imię: </label></td>
+            <td><input type="text" [(ngModel)]="user.name"></td>
+        </tr>
+        <tr>
+            <td><label>Nazwisko: </label></td>
+            <td><input type="text" [(ngModel)]="user.surname"></td>
+        </tr>
+        <tr>
+            <td><label>Płeć: </label></td>
+            <td><input type="text" [(ngModel)]="user.sex"></td>
+        </tr>
+        <tr>
+            <td><label>E-mail: </label></td>
+            <td><input type="text" [(ngModel)]="user.email"></td>
+        </tr>
+        <tr>
+            <td><label>Data urodzenia: </label></td>
+            <td><input type="text" [(ngModel)]="user.dateofbirth"></td>
+        </tr>
+        <tr>
+            <td><label>Numer telefonu: </label></td>
+            <td><input type="text" [(ngModel)]="user.phonenumber"></td>
+        </tr>
+    </table>   
     <button (click)="save()">
         Zapisz
     </button>

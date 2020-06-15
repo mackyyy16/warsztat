@@ -1,16 +1,22 @@
 <div class="contener">
     <h1>Dodaj część</h1>
-
     <div>
-        <label>Nazwa: </label>
-        <input type="text" [(ngModel)]="newPart.name">
-        <br>
-        <label>Producent: </label>
-        <input type="text" [(ngModel)]="newPart.producer">
-        <br>
-        <label>Cena: </label>
-        <input type="number" [(ngModel)]="newPart.price">
-        <br>
+        <table>
+            <tr>
+                <td>
+                    <label>Nazwa</label>
+                    <input type="text" [(ngModel)]="newPart.name">
+                </td>
+                <td>
+                    <label>Producent</label>
+                    <input type="text" [(ngModel)]="newPart.producer">
+                </td>
+                <td>
+                    <label>Cena</label>
+                    <input type="number" [(ngModel)]="newPart.price">
+                </td>
+            </tr>
+        </table>
     </div>
     <br>
     <div>
@@ -21,3 +27,4 @@
         <label>Pomyślnie dodano nową część!</label>
     </div>
 </div>
+<br><br>

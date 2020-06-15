@@ -1,24 +1,32 @@
 <div class="contener">
     <h1>Dodaj ogłoszenie</h1>
     <div class="testClass">
-        <label>Marka: </label>
-        <input type="text" [(ngModel)]="newCar.mark">
-        <br>
-        <label>Model: </label>
-        <input type="text" [(ngModel)]="newCar.model">
-        <br>
-        <label>Numer rejestracyjny: </label>
-        <input type="text" [(ngModel)]="newCar.regnumber">
-        <br>
-        <label>Numer VIN: </label>
-        <input type="number" [(ngModel)]="newCar.nrvin">
-        <br>
-        <label>Przebieg: </label>
-        <input type="number" [(ngModel)]="newCar.course">
-        <br>
-        <label>Opis usterki: </label>
-        <input type="text" [(ngModel)]="newCar.descfault">
-        <br>
+    <table>
+        <tr>
+            <td><label>Marka: </label></td>
+            <td><input type="text" [(ngModel)]="newCar.mark"></td>
+        </tr>
+        <tr>
+            <td><label>Model: </label></td>
+            <td><input type="text" [(ngModel)]="newCar.model"></td>
+        </tr>
+        <tr>
+            <td><label>Numer rejestracyjny: </label></td>
+            <td><input type="text" [(ngModel)]="newCar.regnumber"></td>
+        </tr>
+        <tr>
+            <td><label>Numer VIN: </label></td>
+            <td><input type="number" [(ngModel)]="newCar.nrvin"></td>
+        </tr>
+        <tr>
+            <td><label>Przebieg: </label></td>
+            <td><input type="number" [(ngModel)]="newCar.course"></td>
+        </tr>
+        <tr>
+            <td><label>Opis usterki: </label></td>
+            <td><input type="text" [(ngModel)]="newCar.descfault"></td>
+        </tr>
+    </table>
     </div>
     <br>
     <div>
@@ -29,3 +37,4 @@
         <label>Nr twojego zgloszenia to: {{newCar.id_car}}</label>
     </div>
 </div>
+

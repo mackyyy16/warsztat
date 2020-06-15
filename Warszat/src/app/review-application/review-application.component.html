@@ -3,7 +3,7 @@
     <div>
         <label>Wprowadz nr zgloszenia:</label>
         <input type="number" [(ngModel)]="nrZgloszenia">
-        
+        <br>
         <button (click)="show()">Pokaz</button>
     </div>
     <br>
@@ -45,12 +45,13 @@
                 <label>{{repairInfo.description}}</label>
                 <br><br><br><br>
                 <label>Użyte części podaczas naprawy: </label>
+                <br><br>
                 <table>
                     <thead>
                         <tr>
                             <th>Nazwa</th>
                             <th>Producent</th>
-                            <th>Cena [zł]</th>
+                            <th>Cena</th>
                             <th>Ilość</th>
                             <th>Suma</th>
                         </tr>
