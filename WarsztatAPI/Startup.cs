@@ -30,7 +30,7 @@ namespace WarsztatAPI
             services.AddControllers();
 
             services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(
-                "Host=localhost;Username=postgres;Password=marcin;Database=WorkshopDB"
+                "Host=localhost;Username=postgres;Password=projekt2020;Database=WorkshopDB"
                 ));
 
             services.AddCors(options => options.AddPolicy("AllowAnyOrigin", e => e.AllowAnyOrigin().Build()));

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\poreb\\Desktop\\Warsztat\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj": {}
+    "C:\\Users\\porba\\Desktop\\PROJEKT WARSZTAT\\GitHub\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\poreb\\Desktop\\Warsztat\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj": {
+    "C:\\Users\\porba\\Desktop\\PROJEKT WARSZTAT\\GitHub\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\poreb\\Desktop\\Warsztat\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj",
+        "projectUniqueName": "C:\\Users\\porba\\Desktop\\PROJEKT WARSZTAT\\GitHub\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj",
         "projectName": "WarsztatAPI",
-        "projectPath": "C:\\Users\\poreb\\Desktop\\Warsztat\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj",
-        "packagesPath": "C:\\Users\\poreb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\poreb\\Desktop\\Warsztat\\warsztat\\WarsztatAPI\\obj\\",
+        "projectPath": "C:\\Users\\porba\\Desktop\\PROJEKT WARSZTAT\\GitHub\\warsztat\\WarsztatAPI\\WarsztatAPI.csproj",
+        "packagesPath": "C:\\Users\\porba\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\porba\\Desktop\\PROJEKT WARSZTAT\\GitHub\\warsztat\\WarsztatAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\poreb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\porba\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
